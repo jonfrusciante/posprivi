@@ -11,15 +11,23 @@
             <caption class="text-center">An example of a responsive table based on <a href="https://getbootstrap.com/css/#tables-responsive" target="_blank">Bootstrap</a>:</caption>
             <thead>
             <tr>
-              <th>Country</th>
-              <th>Languages</th>
-              <th>Population</th>
-              <th>Median Age</th>
-              <th>Area (Km²)</th>
+              <th>Nome</th>
+              <th>Categoria</th>
+              <th>Prezzo</th>
             </tr>
             </thead>
-            <tbody>
-
+            <tbody *ngFor="let item of items | async">
+<tr>
+  <th>
+    {{item.nome}}
+  </th>
+  <th>
+    {{item.Categoria}}
+  </th>
+  <th>
+    {{item.prezzo}}
+  </th>
+</tr>
             </tbody>
             <tfoot>
             <tr>
