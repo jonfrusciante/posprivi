@@ -13,6 +13,6 @@ export class FormsComponent implements OnInit {
     console.log(regForm);
   }
   ngOnInit() {
-
+  }
 
 }
