@@ -9,7 +9,7 @@ import {NgForm} from "@angular/forms";
 export class FormsComponent implements OnInit {
 
   constructor() { }
-  Register(regForm:NgForm) {
+  registerUser(regForm:NgForm) {
     console.log(regForm);
   }
   ngOnInit() {
