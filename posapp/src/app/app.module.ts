@@ -7,6 +7,11 @@ import { UiModule } from './ui/ui.module';
 import {FormsModule} from '@angular/forms';
 import { FormsComponent } from './forms/forms.component'
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +20,8 @@ import { FormsComponent } from './forms/forms.component'
   imports: [
     BrowserModule,
     FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     UiModule
   ],
   providers: [],
