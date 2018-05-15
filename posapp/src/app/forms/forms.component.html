@@ -10,7 +10,10 @@
         <div class="form-group">
           <input type="text" class="form-control"  placeholder="Categoria" name="Categoria" required ngModel>
         </div>
-
+        <div class="form-group">
+          <input type="number" class="form-control" id="prezzo" placeholder="Prezzo" name="prezzo"  required ngModel #prezzo="ngModel">
+          <span class="help-bpx" *ngIf="prezzo.touched && !prezzo.valid ">Please enter the un prezzo Value</span>
+        </div>
         <div class="form-group">
         </div>
         <br/>
