@@ -15,8 +15,7 @@ export  interface Prodotti {
 export class FormsComponent implements OnInit {
   ProdottiCollectionRef:AngularFirestoreCollection<Prodotti>;
   Prodotti$:Observable<Prodotti[]>;
-  Prodotto:Prodotti;
-
+  Prodotto:any;
   constructor(private afs: AngularFirestore) {
 this.ProdottiCollectionRef =this.afs.collection( 'Prodotti');
   }
@@ -24,6 +23,7 @@ this.ProdottiCollectionRef =this.afs.collection( 'Prodotti');
 
   }
   registerUser(regForm:NgForm) {
+    this.Prodotto={};
     this.Prodotto.nome=regForm.value.nameitems;
     this.Prodotto.categoria=regForm.value.Categoria;
     this.Prodotto.prezzo=regForm.value.prezzo;
