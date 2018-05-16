@@ -17,7 +17,7 @@
         <div class="form-group">
 
         </div>
-        <ng-select formControlName="selectedCat" >
+        <ng-select [(ngModel)]="selectedCat">
           <ng-option *ngFor="let cat of Categorie$ | async" [value]="cat.nome" [disabled]="cat.disabled" >{{cat.nome}}</ng-option>
         </ng-select>
         <ng-select [items]=" Categorie$ | async" bindLabel="nome"></ng-select>
