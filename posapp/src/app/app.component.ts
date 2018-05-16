@@ -10,7 +10,7 @@ import {Prodotti} from "./forms/forms.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(db:AngularFirestore){
+  constructor(private db:AngularFirestore){
     this.items = db.collection('/Prodotti').snapshotChanges().pipe(
       map(actions => actions.map( a =>
       {
@@ -22,6 +22,7 @@ export class AppComponent {
 
   }
   eliminaprodotto(item){
+    this.db.collection('Prodotti').doc(item).delete();
     console.log(item.id)
   }
   public items: Observable<any[]>;
