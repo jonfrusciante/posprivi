@@ -26,7 +26,7 @@
   {{item.categoria}}a
   </th>
   <th>
-    <input placeholder="{{item.prezzo}}" *ngIf="hiddent" (ngModel)="prezzo" name="{{prezzo + i}}" >
+    <input placeholder="{{item.prezzo}}" *ngIf="hiddent" (input)="prezzo" name="{{prezzo + i}}" >
   </th>
   <th *ngIf="!hiddent">
    {{item.prezzo}}
