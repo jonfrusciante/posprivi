@@ -26,8 +26,12 @@ export class FormsComponent implements OnInit {
   this.ProdottiCollectionRef =this.afs.collection( 'Prodotti');
   this.CategCollRef=this.afs.collection('Categorie_prodotti');
   }
-  addPrdotti(regForm:NgForm){
-
+  AddCategoria(regForm:NgForm){
+    let cat:any={};
+    cat.nome = regForm.value.addcategoria;
+    cat.visibilibita = true;
+    console.log(cat);
+    this.CategCollRef.add(cat);
   }
   registerUser(regForm:NgForm) {
     this.Prodotto={};

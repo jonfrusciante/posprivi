@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
   <div class="row">
     <div class="form_bg">
       <form #form="ngForm" (ngSubmit)="registerUser(form)">
@@ -15,7 +15,7 @@
           <span class="help-bpx" *ngIf="prezzo.touched && !prezzo.valid ">Please enter the un prezzo Value</span>
         </div>
         <div class="form-group">
-
+        <input type="text" name="addcategoria" required placeholder="Inserisci una Categoria" ngModel>
         </div>
         <ng-select [items]=" Categorie$ | async" bindLabel="nome"></ng-select>
         <br/>
@@ -23,6 +23,22 @@
           <button type="submit" class="btn btn-default" id="register" [disabled]="!form.valid" >Register</button>
         </div>
       </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form_bg>"
+
+    <form  #form="catform" (ngSubmit)="AddCategoria(form)">
+      <h2 class="text-center">AGGIUNGI Categorie</h2>
+    <br/>
+      <div class="form-group">
+        <input type="text" name="addcategoria" required placeholder="Inserisci una Categoria" ngModel>
+      </div>
+      <br/>
+      <div class="align-center">
+        <button type="submit" class="btn btn-default" id="addcat" [disabled]="!form.valid" >Aggiungi Categria</button>
+      </div>
+    </form>
     </div>
   </div>
 </div>
