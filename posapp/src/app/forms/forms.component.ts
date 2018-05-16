@@ -24,7 +24,7 @@ export class FormsComponent implements OnInit {
   Prodotto:any;
   constructor(private afs: AngularFirestore) {
   this.ProdottiCollectionRef =this.afs.collection( 'Prodotti');
-  this.CategCollRef=this.afs.collection('Categorie');
+  this.CategCollRef=this.afs.collection('Categorie_prodotti');
   }
   addPrdotti(regForm:NgForm){
 
