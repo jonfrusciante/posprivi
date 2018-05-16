@@ -9,7 +9,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class AppComponent {
   constructor(db:AngularFirestore){
-    this.items = db.collection('/Prodotti').valueChanges();
+    this.items = db.collection('/Prodotti').snapshotChanges();
 
   }
   eliminaprodotto(item){
