@@ -17,16 +17,16 @@
             </tr>
             </thead>
             <tbody>
-<tr  *ngFor="let item of items | async">
+<tr  *ngFor="let item of items | async ;let i = index">
   <th>
     <input placeholder="{{item.nome}}">
     {{item.nome}}
   </th>
   <th>
-  {{item.categoria}}
+  {{item.categoria}}k
   </th>
   <th>
-    <input placeholder="{{item.prezzo}}" *ngIf="hiddent" ngModel="prezzo" id="gino" >
+    <input placeholder="{{item.prezzo}}" *ngIf="hiddent" [(ngModel)]="prezzo" name="{{'prezzo'+i}}" >
   </th>
   <th *ngIf="!hiddent">
    {{item.prezzo}}
