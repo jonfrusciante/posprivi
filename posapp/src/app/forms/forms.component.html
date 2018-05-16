@@ -8,7 +8,9 @@
           <input type="text" class="form-control" placeholder="Nome Prodotto" name="nameitems" required ngModel>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control"  placeholder="Categoria" name="Categoria" required ngModel>
+          <ng-select [(ngModel)]="selectedCat">
+            <ng-option *ngFor="let cat of Categorie$ | async" [value]="cat.nome" [disabled]="cat.disabled" >{{cat.nome}}</ng-option>
+          </ng-select>
         </div>
         <div class="form-group">
           <input type="number" class="form-control" id="prezzo" placeholder="Prezzo" name="prezzo"  required ngModel #prezzo="ngModel">
@@ -17,9 +19,7 @@
         <div class="form-group">
 
         </div>
-        <ng-select [(ngModel)]="selectedCat">
-          <ng-option *ngFor="let cat of Categorie$ | async" [value]="cat.nome" [disabled]="cat.disabled" >{{cat.nome}}</ng-option>
-        </ng-select>
+
         <ng-select [items]=" Categorie$ | async" bindLabel="nome"></ng-select>
         <br/>
         <div class="align-center">
