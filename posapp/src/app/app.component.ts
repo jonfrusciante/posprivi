@@ -31,6 +31,8 @@ export class AppComponent {
     // this.db.collection('Prodotti').doc(item.id).set(item);
   }
   conferma(item){
+    item.prezzo = this.prezzo;
+    console.log(item);
     this.db.collection('Prodotti').doc(item.id).set(item);
     this.hiddent = !this.hiddent;
 
@@ -38,5 +40,5 @@ export class AppComponent {
   }
   public hiddent = false;
   public items: Observable<any[]>;
-  title = 'app';
+  prezzo:any;
 }
