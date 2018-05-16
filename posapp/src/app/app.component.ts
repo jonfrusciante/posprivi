@@ -12,6 +12,9 @@ export class AppComponent {
     this.items = db.collection('/Prodotti').valueChanges();
 
   }
+  eliminaprodotto(item){
+    console.log(item)
+  }
   public items: Observable<any[]>;
   title = 'app';
 }
