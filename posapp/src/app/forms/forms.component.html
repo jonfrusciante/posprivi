@@ -8,7 +8,7 @@
           <input type="text" class="form-control" placeholder="Nome Prodotto" name="nameitems" required ngModel>
         </div>
         <div class="form-group">
-          <ng-select [(ngModel)]="selectedCat">
+          <ng-select [(ngModel)]="selectedCat" [ngModelOptions]="{standalone: true}">
             <ng-option *ngFor="let cat of Categorie$ | async" [value]="cat.nome" [disabled]="cat.disabled" >{{cat.nome}}</ng-option>
           </ng-select>
         </div>
