@@ -22,7 +22,7 @@ export class AppComponent {
 
   }
   eliminaprodotto(item){
-    this.db.collection('Prodotti').doc(item).delete();
+    this.db.collection('Prodotti').doc(item.id).delete();
     console.log(item.id)
   }
   public items: Observable<any[]>;
