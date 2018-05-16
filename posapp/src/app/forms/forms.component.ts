@@ -3,6 +3,7 @@ import {NgForm} from "@angular/forms";
 import { AngularFirestore,AngularFirestoreCollection } from 'angularfire2/firestore';
 import {Observable} from "rxjs/index";
 export  interface Prodotti {
+  id?:string
   nome:string;
   categoria:string;
   prezzo:number;
