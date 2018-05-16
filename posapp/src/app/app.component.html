@@ -27,7 +27,9 @@
   </th>
   <th>
     <input placeholder="{{item.prezzo}}" *ngIf="hiddent" [(ngModel)]="prezzo" id="gino" >
-    <a *ngIf="!hiddent">{{item.prezzo}}</a>
+  </th>
+  <th *ngIf="!hiddent">
+   {{item.prezzo}}
   </th>
   <th>
     <button class="btn btn-danger"(click)="eliminaprodotto(item)">Elimina</button>
