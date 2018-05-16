@@ -37,7 +37,7 @@ export class FormsComponent implements OnInit {
   registerUser(regForm:NgForm) {
     this.Prodotto={};
     this.Prodotto.nome=regForm.value.nameitems;
-    this.Prodotto.categoria=this.selectedCat;
+    this.Prodotto.categoria=this.selectedCat.value;
     this.Prodotto.prezzo=regForm.value.prezzo;
     console.log(regForm);
 
