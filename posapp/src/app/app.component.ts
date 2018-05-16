@@ -25,6 +25,9 @@ export class AppComponent {
     this.db.collection('Prodotti').doc(item.id).delete();
     console.log(item.id)
   }
+  modificaprodotto(item){
+    this.db.collection('Prodotti').doc(item.id).set(item);
+  }
   public items: Observable<any[]>;
   title = 'app';
 }

@@ -22,13 +22,17 @@
     {{item.nome}}
   </th>
   <th>
-    {{item.categoria}}
+    <input type="text"  placeholder="item.categoria">
+
   </th>
   <th>
     {{item.prezzo}}
   </th>
   <th>
     <button class="btn btn-danger"(click)="eliminaprodotto(item)">Elimina</button>
+  </th>
+  <th>
+    <button class="btn btn-info" (click)="modificaprodotto(item)">Modifica</button>
   </th>
 </tr>
             </tbody>
