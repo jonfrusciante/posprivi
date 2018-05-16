@@ -22,7 +22,7 @@ export class AppComponent {
 
   }
   eliminaprodotto(item){
-    console.log(item)
+    console.log(item.id)
   }
   public items: Observable<any[]>;
   title = 'app';
