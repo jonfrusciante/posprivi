@@ -34,8 +34,8 @@
   <th>
     <button class="btn btn-danger"(click)="eliminaprodotto(item)">Elimina</button>
   </th>
-  <th>
-    <button class="btn btn-info" (click)="modificaprodotto(item) " *ngIf="!hiddent">Modifica</button>
+  <th *ngIf="!hiddent">
+    <button class="btn btn-info" (click)="modificaprodotto(item) " >Modifica</button>
   </th>
   <th>
     <button class="btn btn-primary" (click)="conferma(item) " *ngIf="hiddent">Conferma</button>
