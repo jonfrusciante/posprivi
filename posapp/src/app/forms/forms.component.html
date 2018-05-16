@@ -15,8 +15,11 @@
           <span class="help-bpx" *ngIf="prezzo.touched && !prezzo.valid ">Please enter the un prezzo Value</span>
         </div>
         <div class="form-group">
-        <input type="text" name="addcategoria" required placeholder="Inserisci una Categoria" ngModel>
+
         </div>
+        <ng-select [(ngModel)]="selectedCat">
+          <ng-option *ngFor="let cat of Categorie$ | async" [value]="cat.nome" [disabled]="cat.disabled" >{{cat.nome}}</ng-option>
+        </ng-select>
         <ng-select [items]=" Categorie$ | async" bindLabel="nome"></ng-select>
         <br/>
         <div class="align-center">

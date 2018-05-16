@@ -17,6 +17,7 @@ export interface Categorie{
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
+  selectedCat:any;
   Categorie$:Observable<Categorie[]>;
   ProdottiCollectionRef:AngularFirestoreCollection<Prodotti>;
   CategCollRef:AngularFirestoreCollection<Categorie>;
@@ -36,7 +37,7 @@ export class FormsComponent implements OnInit {
   registerUser(regForm:NgForm) {
     this.Prodotto={};
     this.Prodotto.nome=regForm.value.nameitems;
-    this.Prodotto.categoria=regForm.value.Categoria;
+    this.Prodotto.categoria=this.selectedCat;
     this.Prodotto.prezzo=regForm.value.prezzo;
     console.log(this.Prodotto);
 
