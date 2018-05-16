@@ -27,13 +27,16 @@
   </th>
   <th>
     <input placeholder="{{item.prezzo}}" *ngIf="hiddent">
-    {{item.prezzo}}
+    <a *ngIf="!hiddent">{{item.prezzo}}</a>
   </th>
   <th>
     <button class="btn btn-danger"(click)="eliminaprodotto(item)">Elimina</button>
   </th>
   <th>
-    <button class="btn btn-info" (click)="modificaprodotto(item)">Modifica</button>
+    <button class="btn btn-info" (click)="modificaprodotto(item) " *ngIf="!hiddent">Modifica</button>
+  </th>
+  <th>
+    <button class="btn btn-primary" (click)="conferma(item) " *ngIf="hiddent">Conferma</button>
   </th>
 </tr>
             </tbody>

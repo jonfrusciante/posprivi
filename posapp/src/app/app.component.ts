@@ -30,6 +30,12 @@ export class AppComponent {
     console.log(this.hiddent);
     // this.db.collection('Prodotti').doc(item.id).set(item);
   }
+  conferma(item){
+    this.db.collection('Prodotti').doc(item.id).set(item);
+    this.hiddent = !this.hiddent;
+
+
+  }
   public hiddent = false;
   public items: Observable<any[]>;
   title = 'app';
