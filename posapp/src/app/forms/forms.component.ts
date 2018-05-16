@@ -41,8 +41,9 @@ export class FormsComponent implements OnInit {
     this.Prodotto.categoria=this.selectedCat;
     this.Prodotto.prezzo=regForm.value.prezzo;
     console.log(this.Prodotto);
-
     this.ProdottiCollectionRef.add(this.Prodotto)
+    this.Prodotto={};
+
   }
   ngOnInit() {
     this.Categorie$=this.CategCollRef.valueChanges();
