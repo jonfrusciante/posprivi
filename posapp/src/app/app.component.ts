@@ -26,8 +26,11 @@ export class AppComponent {
     console.log(item.id)
   }
   modificaprodotto(item){
-    this.db.collection('Prodotti').doc(item.id).set(item);
+    this.hiddent = !this.hiddent;
+    console.log(this.hiddent);
+    // this.db.collection('Prodotti').doc(item.id).set(item);
   }
+  public hiddent = false;
   public items: Observable<any[]>;
   title = 'app';
 }

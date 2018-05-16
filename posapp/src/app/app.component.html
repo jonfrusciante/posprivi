@@ -19,13 +19,14 @@
             <tbody *ngFor="let item of items | async">
 <tr>
   <th>
+    <input placeholder="{{item.nome}}">
     {{item.nome}}
   </th>
   <th>
-    <input placeholder="{{item.categoria}}">
-
+  {{item.categoria}}
   </th>
   <th>
+    <input placeholder="{{item.prezzo}}" *ngIf="hiddent">
     {{item.prezzo}}
   </th>
   <th>
