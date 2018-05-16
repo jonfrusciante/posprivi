@@ -23,10 +23,10 @@
     {{item.nome}}
   </th>
   <th>
-  {{item.categoria}}k
+  {{item.categoria}}
   </th>
   <th>
-    <input placeholder="{{item.prezzo}}" *ngIf="hiddent" [(ngModel)]="prezzo" name="{{'prezzo'+i}}" >
+    <input placeholder="{{item.prezzo}}" *ngIf="hiddent" [(ngModel)]="prezzo" name="{{prezzo + i}}" >
   </th>
   <th *ngIf="!hiddent">
    {{item.prezzo}}
@@ -35,7 +35,7 @@
     <button class="btn btn-danger"(click)="eliminaprodotto(item)">Elimina</button>
   </th>
   <th>
-    <button class="btn btn-info" (click)="modificaprodotto(item) ; $event.stopPropagation();" *ngIf="!hiddent">Modifica</button>
+    <button class="btn btn-info" (click)="modificaprodotto(item) " *ngIf="!hiddent">Modifica</button>
   </th>
   <th>
     <button class="btn btn-primary" (click)="conferma(item) " *ngIf="hiddent">Conferma</button>
