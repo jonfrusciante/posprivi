@@ -6,7 +6,7 @@ import { UiModule } from './ui/ui.module';
 
 import {FormsModule} from '@angular/forms';
 import { FormsComponent } from './forms/forms.component'
-
+import { NgSelectModule } from '@ng-select/ng-select';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
@@ -20,6 +20,7 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     FormsModule,
+    NgSelectModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     UiModule

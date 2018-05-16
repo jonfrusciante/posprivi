@@ -7,17 +7,24 @@ export  interface Prodotti {
   categoria:string;
   prezzo:number;
 }
+export interface Categorie{
+  nome:string;
+  visibilita:boolean;
+}
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
+  Categorie$:Observable<Categorie[]>;
   ProdottiCollectionRef:AngularFirestoreCollection<Prodotti>;
+  CategCollRef:AngularFirestoreCollection<Categorie>;
   Prodotti$:Observable<Prodotti[]>;
   Prodotto:any;
   constructor(private afs: AngularFirestore) {
-this.ProdottiCollectionRef =this.afs.collection( 'Prodotti');
+  this.ProdottiCollectionRef =this.afs.collection( 'Prodotti');
+  this.CategCollRef=this.afs.collection('Categorie');
   }
   addPrdotti(regForm:NgForm){
 
@@ -32,6 +39,7 @@ this.ProdottiCollectionRef =this.afs.collection( 'Prodotti');
     this.ProdottiCollectionRef.add(this.Prodotto)
   }
   ngOnInit() {
+    this.Categorie$=this.CategCollRef.valueChanges();
   }
 
 }
