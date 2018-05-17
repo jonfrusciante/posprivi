@@ -26,7 +26,7 @@ export class VenditaComponent implements OnInit {
     );
   }
   addproduct(productId){
-    this.afs.collection('Prodotti').doc(productId).valueChanges().subscribe(s => this.order.push(s));
+    this.afs.collection('Prodotti').doc(productId).valueChanges().map(s => this.order.push(s));
 
     console.log(this.order);
 
