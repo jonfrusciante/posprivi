@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs/Rx";
+import {Observable, pipe} from "rxjs/Rx";
 import {AngularFirestore} from "angularfire2/firestore";
 import {Prodotti} from "../forms/forms.component";
 import {map} from "rxjs/internal/operators";
@@ -26,7 +26,7 @@ export class VenditaComponent implements OnInit {
     );
   }
   addproduct(productId){
-    this.afs.collection('Prodotti').doc(productId).valueChanges().map(s => this.order.push(s));
+    this.afs.collection('Prodotti').doc(productId).valueChanges().pipe(map(s => this.order.push(s)));
 
     console.log(this.order);
 
