@@ -34,4 +34,8 @@ export class VenditaComponent implements OnInit {
   ngOnInit() {
   }
 
+  getSum() {
+
+
+  }
 }
