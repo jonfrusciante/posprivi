@@ -37,9 +37,9 @@
               Noting ordered yet !
             </div>
             <ul class="list-group">
-              <li class="list-group-item" *ngFor=" let item of order as Prodotto">
-                <div class="label label-success">${{item.nome | async }}</div>
-                {{item.item.detail}}
+              <li class="list-group-item" *ngFor=" let item of order ">
+                <div class="label label-success">${{ item?.prezzo  | async }}</div>
+                {{item.nome | async }}
 
                 <button class="btn btn-danger btn-xs pull-right" (click)=" deleteItem($index)">
                   <span class="glyphicon glyphicon-trash"></span>
