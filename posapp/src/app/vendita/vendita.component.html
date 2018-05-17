@@ -33,7 +33,7 @@
             <h3 class="panel-title">Order Summary</h3>
           </div>
           <div class="panel-body" style="max-height:320px; overflow:auto;">
-            <div class="text-warning" *ngIf=" order.length">
+            <div class="text-warning" *ngIf=" !order.length">
               Noting ordered yet !
             </div>
             <ul class="list-group">
