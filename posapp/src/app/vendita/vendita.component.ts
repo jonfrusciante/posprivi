@@ -38,7 +38,7 @@ export class VenditaComponent implements OnInit {
     let i = 0 ,
       sum = 0;
     for(; i < this.order.length; i++) {
-      sum += parseInt(this.order[i].item.price , 10);
+      sum += parseInt(this.order[i].item.prezzo , 10);
     }
     return sum;
 
