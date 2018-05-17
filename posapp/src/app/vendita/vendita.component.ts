@@ -27,7 +27,7 @@ export class VenditaComponent implements OnInit {
   }
   addproduct(productId){
     const c =  this.afs.collection('Prodotti').doc(productId).valueChanges().pipe(map(
-      actio => actio ));
+      actio => actio as Prodotti ));
     this.order.push(
       c    );
     console.log(this.order);
