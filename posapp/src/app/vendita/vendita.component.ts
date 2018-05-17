@@ -12,7 +12,7 @@ export class VenditaComponent implements OnInit {
   order:Object={};
 
   constructor(private  afs:AngularFirestore) {
-    this.categories = this.afs.collection('Prodotti_categorie').valueChanges();
+    this.categories = this.afs.collection('Categorie_prodotti').valueChanges();
   }
 
   ngOnInit() {
