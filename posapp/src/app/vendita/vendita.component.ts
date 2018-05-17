@@ -9,6 +9,7 @@ import {AngularFirestore} from "angularfire2/firestore";
 })
 export class VenditaComponent implements OnInit {
   categories:Observable<any[]>;
+  order:Object={};
 
   constructor(private  afs:AngularFirestore) {
     this.categories = this.afs.collection('Prodotti_categorie').valueChanges();
