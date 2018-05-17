@@ -15,14 +15,15 @@
         <div class="box" *ngFor="let categoria of categories  | async ">
           <div class="text-info">{{categoria.nome}}</div>
           <hr>
+          <div *ngFor="let prodotti of Product | async">
 
-          <button class="buttons btn btn-primary" (click)=" add(food.pizza)">Sofa</button>
+          <button *ngIf="prodotti.categoria === categoria.nome" class="buttons btn btn-primary" (click)=" add(product.id)">{{product.nome}}</button>
           <button class="buttons btn btn-primary" (click)=" add(food.donut)">Bàn sofa</button>
           <button class="buttons btn btn-primary" (click)=" add(food.tortilla)">Ghế đôn</button>
           <button class="buttons btn btn-primary" (click)=" add(food.burger)">Trang thờ</button>
           <button class="buttons btn btn-success" (click)=" add(food.samosa)">Đèn soi tranh</button>
         </div>
-
+        </div>
         <br/>
         <div class="box">
           <div class="text-info">Bewerages</div>
