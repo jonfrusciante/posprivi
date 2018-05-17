@@ -15,13 +15,10 @@
         <div class="box" *ngFor="let categoria of categories  | async ">
           <div class="text-info">{{categoria.nome}}</div>
           <hr>
-          <div *ngFor="let prodotti of Product | async">
+          <div>
 
-          <button *ngIf="prodotti.categoria === categoria.nome" class="buttons btn btn-primary" (click)=" add(product.id)">{{product.nome}}</button>
-          <button class="buttons btn btn-primary" (click)=" add(food.donut)">Bàn sofa</button>
-          <button class="buttons btn btn-primary" (click)=" add(food.tortilla)">Ghế đôn</button>
-          <button class="buttons btn btn-primary" (click)=" add(food.burger)">Trang thờ</button>
-          <button class="buttons btn btn-success" (click)=" add(food.samosa)">Đèn soi tranh</button>
+          <button  *ngFor="let prodotti of Product | async"  class="buttons btn btn-primary" (click)=" add(product.id)">{{product.nome}}</button>
+
         </div>
         </div>
         <br/>
@@ -45,15 +42,15 @@
             <h3 class="panel-title">Order Summary</h3>
           </div>
           <div class="panel-body" style="max-height:320px; overflow:auto;">
-            <div class="text-warning" ng-hide="order.length">
+            <div class="text-warning" *ngIf=" order.length">
               Noting ordered yet !
             </div>
             <ul class="list-group">
-              <li class="list-group-item" ng-repeat = "item in order">
+              <li class="list-group-item" *ngFor=" let item of order">
                 <div class="label label-success">${{item.item.price}}</div>
                 {{item.item.detail}}
 
-                <button class="btn btn-danger btn-xs pull-right" ng-click="deleteItem($index)">
+                <button class="btn btn-danger btn-xs pull-right" (click)=" deleteItem($index)">
                   <span class="glyphicon glyphicon-trash"></span>
                 </button>
               </li>
