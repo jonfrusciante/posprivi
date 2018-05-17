@@ -1,3 +1,57 @@
 <p>
   prodotti works!
 </p>
+<ul>
+  <li *ngFor="let item of items | async">
+    <pre>{{ item.nome  }}</pre>
+  </li>
+</ul>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="table-responsive">
+      <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
+        <caption class="text-center">An example of a responsive table based on <a href="https://getbootstrap.com/css/#tables-responsive" target="_blank">Bootstrap</a>:</caption>
+        <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Categoria</th>
+          <th>Prezzo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let item of items | async ;let i = index">
+          <th>
+            <input placeholder="{{item.nome}}">
+            {{item.nome}}
+          </th>
+          <th>
+            {{item.categoria}}a
+          </th>
+          <th>
+            <input  placeholder="{{item.prezzo}}" *ngIf="hiddent" (input)="prezzo = $event.target.value" name="{{prezzo + i}}" >
+          </th>
+          <th *ngIf="!hiddent">
+            {{item.prezzo}}
+          </th>
+          <th>
+            <button class="btn btn-danger"(click)="eliminaprodotto(item)">Elimina</button>
+          </th>
+          <th *ngIf="!hiddent">
+            <button class="btn btn-info" (click)="modificaprodotto(item) " >Modifica</button>
+          </th>
+          <th>
+            <button class="btn btn-primary" (click)="conferma(item) " *ngIf="hiddent">Conferma</button>
+          </th>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="5" class="text-center">Data retrieved from <a href="http://www.infoplease.com/ipa/A0855611.html" target="_blank">infoplease</a> and <a href="http://www.worldometers.info/world-population/population-by-country/" target="_blank">worldometers</a>.</td>
+        </tr>
+        </tfoot>
+      </table>
+    </div><!--end of .table-responsive-->
+  </div>
+</div>
+
+<p class="p">Demo by George Martsoukos. <a href="http://www.sitepoint.com/responsive-data-tables-comprehensive-list-solutions" target="_blank">See article</a>.</p>
