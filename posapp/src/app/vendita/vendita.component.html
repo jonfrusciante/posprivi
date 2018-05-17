@@ -58,7 +58,7 @@
           </div>
           <div class="pull-right">
             <span class="btn btn-info" (click)="clearOrder()" *ngIf="order.length">Clear</span>
-            <span class="btn btn-danger" (click)="checkout()" *ngIf="order.length">Checkout</span>
+            <span class="btn btn-danger" (click)="checkout(order)" *ngIf="order.length">Checkout</span>
           </div>
 
         </div>

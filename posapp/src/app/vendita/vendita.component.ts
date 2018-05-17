@@ -56,4 +56,9 @@ export class VenditaComponent implements OnInit {
   clearOrder() {
     this.order=[];
   }
+
+  checkout(order) {
+    console.log(order);
+    this.order=[];
+  }
 }
