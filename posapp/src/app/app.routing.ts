@@ -5,6 +5,7 @@ import {ProdottiComponent} from "./prodotti/prodotti.component";
 import {VenditaComponent} from "./vendita/vendita.component";
 import {TavoliComponent} from "./tavoli/tavoli.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
+import {AddproductComponent} from "./prodotti/addproduct/addproduct.component";
 
 const appRoutes : Routes =
   [
@@ -14,7 +15,12 @@ const appRoutes : Routes =
     },
     {
       path: 'prodotti',
-      component: ProdottiComponent
+      component: ProdottiComponent,
+      children: [
+        {
+          path: 'add',
+          component: AddproductComponent
+    }]
     },
     {
       path: 'vendita',
