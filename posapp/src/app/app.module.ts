@@ -17,6 +17,7 @@ import { TavoliComponent } from './tavoli/tavoli.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {routing} from "./app.routing";
 import {HomeComponent} from "./home/home.component";
+import { AddproductComponent } from './prodotti/addproduct/addproduct.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HomeComponent} from "./home/home.component";
     ProdottiComponent,
     VenditaComponent,
     TavoliComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    AddproductComponent
   ],
   imports: [
     BrowserModule,
