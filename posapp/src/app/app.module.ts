@@ -15,6 +15,7 @@ import { ProdottiComponent } from './prodotti/prodotti.component';
 import { VenditaComponent } from './vendita/vendita.component';
 import { TavoliComponent } from './tavoli/tavoli.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {routing} from "./app.routing";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
+    routing,
     FormsModule,
     NgSelectModule,
     AngularFireModule.initializeApp(environment.firebase),
