@@ -11,11 +11,17 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 import { environment } from '../environments/environment';
+import { ProdottiComponent } from './prodotti/prodotti.component';
+import { VenditaComponent } from './vendita/vendita.component';
+import { TavoliComponent } from './tavoli/tavoli.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormsComponent
+    FormsComponent,
+    ProdottiComponent,
+    VenditaComponent,
+    TavoliComponent
   ],
   imports: [
     BrowserModule,
