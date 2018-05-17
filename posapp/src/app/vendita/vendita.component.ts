@@ -47,4 +47,8 @@ export class VenditaComponent implements OnInit {
   deleteItem(i) {
     this.order.splice(i,1);
   }
+
+  clearOrder() {
+    this.order=[];
+  }
 }
