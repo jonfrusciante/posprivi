@@ -43,4 +43,8 @@ export class VenditaComponent implements OnInit {
     return sum;
 
   }
+
+  deleteItem(i) {
+    this.order.splice(i,1);
+  }
 }

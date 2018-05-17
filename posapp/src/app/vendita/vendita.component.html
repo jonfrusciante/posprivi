@@ -37,11 +37,11 @@
               Noting ordered yet !
             </div>
             <ul class="list-group">
-              <li class="list-group-item" *ngFor=" let item of order  ">
+              <li class="list-group-item" *ngFor=" let item of order ; let i = index   ">
                 <div class="label label-success">${{ item?.prezzo  }}</div>
                 {{item?.nome  }}
 
-                <button class="btn btn-danger btn-xs pull-right" (click)=" deleteItem($index)">
+                <button class="btn btn-danger btn-xs pull-right" (click)=" deleteItem(i)">
                   <span class="glyphicon glyphicon-trash"></span>
                 </button>
               </li>
