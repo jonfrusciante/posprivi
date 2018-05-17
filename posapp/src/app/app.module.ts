@@ -16,11 +16,13 @@ import { VenditaComponent } from './vendita/vendita.component';
 import { TavoliComponent } from './tavoli/tavoli.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {routing} from "./app.routing";
+import {HomeComponent} from "./home/home.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     FormsComponent,
+    HomeComponent,
     ProdottiComponent,
     VenditaComponent,
     TavoliComponent,
