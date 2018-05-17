@@ -34,8 +34,13 @@ export class VenditaComponent implements OnInit {
   ngOnInit() {
   }
 
-  getSum(t) {
+  getSum() {
+    let i = 0 ,
+      sum = 0;
+    for(; i < this.order.length; i++) {
+      sum += parseInt(this.order[i].item.price , 10);
+    }
+    return sum;
 
-console.log(t)
   }
 }
