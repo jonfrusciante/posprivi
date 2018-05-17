@@ -17,20 +17,11 @@
           <hr>
           <div *ngFor="let prodotti of Product | async" style="display: inline;margin-left: 3px">
 
-          <button  *ngIf="prodotti.categoria === categoria.nome" class="buttons btn btn-primary" (click)=" add(product.id)">{{prodotti.nome}}</button>
+          <button  *ngIf="prodotti.categoria === categoria.nome" class="buttons btn btn-primary" (click)=" addproduct(prodotti.id)">{{prodotti.nome}}</button>
 
         </div>
         </div>
         <br/>
-        <div class="box">
-          <div class="text-info">Bewerages</div>
-          <hr>
-          <button class="buttons btn btn-primary"(click)=" add(food.coldcoffee)">Cold Coffee</button>
-          <button class="buttons btn btn-primary"(click)=" add(food.hotcoffee)">Hot Coffee</button>
-          <button class="buttons btn btn-primary"(click)=" add(food.coke)">Coke</button>
-          <button class="buttons btn btn-primary"(click)=" add(food.dietcoke)">Diet Coke</button>
-          <button class="buttons btn btn-primary"(click)=" add(food.pepsi)">Pepsi</button>
-        </div>
 
       </div>
     </div>
