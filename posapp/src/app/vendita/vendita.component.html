@@ -17,7 +17,7 @@
           <hr>
           <div *ngFor="let prodotti of Product | async">
 
-          <button *ngIf="prodotti.categoria === categoria.nome" class="buttons btn btn-primary" (click)=" add(product.id)">{{product.nome}}</button>
+          <button *ngIf="prodotti.categoria === categoria.nome" class="buttons btn btn-primary" (click)=" add(product.id)">{{prodotti.nome}}</button>
 
         </div>
         </div>
