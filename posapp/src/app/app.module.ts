@@ -14,6 +14,7 @@ import { environment } from '../environments/environment';
 import { ProdottiComponent } from './prodotti/prodotti.component';
 import { VenditaComponent } from './vendita/vendita.component';
 import { TavoliComponent } from './tavoli/tavoli.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TavoliComponent } from './tavoli/tavoli.component';
     FormsComponent,
     ProdottiComponent,
     VenditaComponent,
-    TavoliComponent
+    TavoliComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
