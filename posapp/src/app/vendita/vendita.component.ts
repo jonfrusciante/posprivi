@@ -12,6 +12,7 @@ import {map} from "rxjs/internal/operators";
 export class VenditaComponent implements OnInit {
   categories:Observable<any[]>;
   order=[];
+  Prodotto$:Observable<any>;
   Product:Observable<any[]>;
   constructor(private  afs:AngularFirestore) {
     this.categories = this.afs.collection('Categorie_prodotti').valueChanges();
@@ -25,9 +26,9 @@ export class VenditaComponent implements OnInit {
     );
   }
   addproduct(productId){
+    const c =  this.afs.collection('Prodotti').doc(productId).valueChanges();
     this.order.push(
-    this.afs.collection('Prodotti').doc(productId).valueChanges()
-    );
+      c    );
     console.log(this.order);
 
   }
