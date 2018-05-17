@@ -15,7 +15,7 @@
         <div class="box" *ngFor="let categoria of categories  | async ">
           <div class="text-info">{{categoria.nome}}</div>
           <hr>
-          <div *ngFor="let prodotti of Product | async" style="display: inline">
+          <div *ngFor="let prodotti of Product | async" style="display: inline;margin-left: 1em">
 
           <button  *ngIf="prodotti.categoria === categoria.nome" class="buttons btn btn-primary" (click)=" add(product.id)">{{prodotti.nome}}</button>
 
