@@ -10,6 +10,8 @@ import {map} from "rxjs/internal/operators";
   styleUrls: ['./vendita.component.css']
 })
 export class VenditaComponent implements OnInit {
+  public now: Date = new Date();
+
   categories:Observable<any[]>;
   order=[];
   Prodotto$:Observable<any>;
@@ -24,6 +26,9 @@ export class VenditaComponent implements OnInit {
         return {id, ...data};
       }))
     );
+    setInterval(() => {
+      this.now = new Date();
+    }, 1)
   }
   addproduct(productId){
     this.afs.collection('Prodotti').doc(productId).valueChanges().subscribe(s => this.order.push(s));
