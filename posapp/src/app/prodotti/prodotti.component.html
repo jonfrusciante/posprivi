@@ -20,9 +20,6 @@
           <th>
             {{item.categoria}}a
           </th>
-          <th>
-
-          </th>
           <th >
             <input  placeholder="{{item.prezzo}}" *ngIf="hiddent" (input)="prezzo = $event.target.value" name="{{prezzo + i}}" >
             <a *ngIf="!hiddent">{{item.prezzo}}</a>
