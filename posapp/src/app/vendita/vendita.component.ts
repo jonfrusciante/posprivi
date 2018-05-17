@@ -15,7 +15,9 @@ export class VenditaComponent implements OnInit {
     this.categories = this.afs.collection('Categorie_prodotti').valueChanges();
     this.Product=this.afs.collection('Prodotti').valueChanges();
   }
+  filtrati(item){
 
+  }
   ngOnInit() {
   }
 
