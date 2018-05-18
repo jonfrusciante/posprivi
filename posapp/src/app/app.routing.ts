@@ -2,10 +2,11 @@ import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from "./home/home.component";
 import {ProdottiComponent} from "./prodotti/prodotti.component";
-import {VenditaComponent} from "./vendita/vendita.component";
+import {OrderTicket, VenditaComponent} from "./vendita/vendita.component";
 import {TavoliComponent} from "./tavoli/tavoli.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {AddproductComponent} from "./prodotti/addproduct/addproduct.component";
+import {TichetOrderComponent} from "./tichet-order/tichet-order.component";
 
 const appRoutes : Routes =
   [
@@ -29,6 +30,11 @@ const appRoutes : Routes =
     {
       path: 'tavoli',
       component: TavoliComponent,
+
+    },
+    {
+      path: 'orderTicket',
+      component: TichetOrderComponent,
 
     },
     {
