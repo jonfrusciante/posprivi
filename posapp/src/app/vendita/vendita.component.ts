@@ -16,6 +16,7 @@ export interface OrderTicket{
   styleUrls: ['./vendita.component.css']
 })
 export class VenditaComponent implements OnInit {
+  nCoperti:number;
   selectedtableId:any;
   public now: Date = new Date();
   Table$:Observable<any[]>;
@@ -70,10 +71,16 @@ export class VenditaComponent implements OnInit {
 
   checkout(order) {
     let c={
-    ordine : order ,
-    nTavolo : this.selectedtableId
+      ordine : order ,
+      nTavolo : this.selectedtableId,
+      status:'open',
+      data_modifica:this.now
+
     };
+    this.afs.collection('OrderTicket').add(c);
+    this.afs.collection('Tavoli').doc(c.nTavolo).update({islibero:false});
     console.log(c);
+
     this.selectedtableId=undefined;
     this.order=[];
   }
