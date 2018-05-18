@@ -5,7 +5,7 @@ import {map} from "rxjs/internal/operators";
 export interface Table{
   id?:string;
   islibero:boolean;
-  nome:string;
+  numero:string;
   coperti:number;
 }
 @Component({
