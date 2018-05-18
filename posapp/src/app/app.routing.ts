@@ -33,7 +33,7 @@ const appRoutes : Routes =
 
     },
     {
-      path: 'orderTicket',
+      path: 'order',
       component: TichetOrderComponent,
 
     },
