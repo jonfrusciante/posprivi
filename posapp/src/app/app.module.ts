@@ -18,6 +18,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {routing} from "./app.routing";
 import {HomeComponent} from "./home/home.component";
 import { AddproductComponent } from './prodotti/addproduct/addproduct.component';
+import { TichetOrderComponent } from './tichet-order/tichet-order.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddproductComponent } from './prodotti/addproduct/addproduct.component'
     VenditaComponent,
     TavoliComponent,
     PageNotFoundComponent,
-    AddproductComponent
+    AddproductComponent,
+    TichetOrderComponent
   ],
   imports: [
     BrowserModule,
