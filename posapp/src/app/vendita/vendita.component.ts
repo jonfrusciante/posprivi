@@ -3,7 +3,13 @@ import {Observable} from "rxjs/Rx";
 import {AngularFirestore} from "angularfire2/firestore";
 import {Prodotti} from "../forms/forms.component";
 import {map} from "rxjs/internal/operators";
-
+import {isUndefined} from "util";
+export interface OrderTicket{
+  id?:string;
+  nTavolo:string;
+  NCoperti:number;
+  ordine:Object;
+}
 @Component({
   selector: 'app-vendita',
   templateUrl: './vendita.component.html',
@@ -63,8 +69,12 @@ export class VenditaComponent implements OnInit {
   }
 
   checkout(order) {
-    console.log(order);
-
+    let c={
+    ordine : order ,
+    nTavolo : this.selectedtableId
+    };
+    console.log(c);
+    this.selectedtableId=undefined;
     this.order=[];
   }
 }
