@@ -1,3 +1,15 @@
-<p>
-  tavoli works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <div *ngFor="let table of tables$ | async" class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">IL NUMERO TEL TAVOLO è : {{table.nome}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted" *ngIf="table.islibero" style="color: green">tavolo libero</h6>
+        <h6 class="card-subtitle mb-2 text-muted" *ngIf="!table.islibero" style="color: red">tavolo Occupato</h6>
+
+        <p class="card-text">COPERTI:{{table.coperti}}</p>
+        <a href="#" class="card-link">Edit</a>
+        <a href="#" class="card-link">Cancella</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -62,6 +62,7 @@ export class VenditaComponent implements OnInit {
 
   checkout(order) {
     console.log(order);
+    
     this.order=[];
   }
 }
