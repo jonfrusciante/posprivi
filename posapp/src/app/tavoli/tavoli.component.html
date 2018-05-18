@@ -16,8 +16,8 @@
         <h6 class="card-subtitle mb-2 text-muted" *ngIf="!table.islibero" style="text-decoration-color: red">tavolo Occupato</h6>
 
         <p class="card-text">COPERTI:{{table.coperti}}</p>
-        <a href="#" class="card-link">Edit</a>
-        <a (click)="deleteTable(table.id)" class="card-link">Cancella</a>
+        <button  (click)="edit(table.id)" class="btn btn-danger">Modifica</button>
+        <button  (click)="deleteTable(table.id)" class="btn btn-danger">Cancella</button>
       </div>
     </div>
   </div>
