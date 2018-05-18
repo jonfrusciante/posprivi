@@ -11,7 +11,9 @@
 <div class="row">
   <div class="col-md-12">
     <h2 class="text-center">Seleziona un tavolo</h2>
-    <ng-select [items]="Table$ | async " [bindValue]="id" [bindLabel]="numero"  [(ngModel)]="selectedtableId"></ng-select>
+    <ng-select   [(ngModel)]="selectedtableId" [ngModelOptions]="{standalone: true}">
+      <ng-option *ngFor=" let table of Table$ | async"  [bindValue]="table.id" [bindLabel]="table.numero"></ng-option>
+    </ng-select>
   </div>
 </div>
   <div class="row">
