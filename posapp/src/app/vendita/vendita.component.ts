@@ -10,13 +10,15 @@ import {map} from "rxjs/internal/operators";
   styleUrls: ['./vendita.component.css']
 })
 export class VenditaComponent implements OnInit {
+  selectedtableId:any;
   public now: Date = new Date();
-
+  Table$:Observable<any[]>;
   categories:Observable<any[]>;
   order=[];
   Prodotto$:Observable<any>;
   Product:Observable<any[]>;
   constructor(private  afs:AngularFirestore) {
+    this.Table$=this.afs.collection('Tavoli').valueChanges();
     this.categories = this.afs.collection('Categorie_prodotti').valueChanges();
     this.Product=this.afs.collection('Prodotti').snapshotChanges().pipe(
       map(actions => actions.map( a =>
@@ -62,7 +64,7 @@ export class VenditaComponent implements OnInit {
 
   checkout(order) {
     console.log(order);
-    
+
     this.order=[];
   }
 }
