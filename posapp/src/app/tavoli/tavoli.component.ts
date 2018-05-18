@@ -28,6 +28,9 @@ export class TavoliComponent implements OnInit {
       }))
     );
   }
+  deleteTable(id){
+    this.afs.collection('Tavoli').doc(id).delete();
+  }
   addTable(){
     console.log(this.nTavolo , this.nCoperti );
     let Tavolo:Table={
