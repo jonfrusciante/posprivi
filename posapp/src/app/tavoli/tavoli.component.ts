@@ -29,7 +29,13 @@ export class TavoliComponent implements OnInit {
     );
   }
   addTable(){
-    console.log(this.nTavolo , this.nCoperti )
+    console.log(this.nTavolo , this.nCoperti );
+    let Tavolo:Table={
+    islibero:true,
+    numero:this.nTavolo,
+    coperti:this.nCoperti
+    };
+    this.afs.collection('Tavoli').doc(this.nTavolo).set(Tavolo);
   }
   ngOnInit() {
   }
