@@ -14,6 +14,8 @@ export interface Table{
   styleUrls: ['./tavoli.component.css']
 })
 export class TavoliComponent implements OnInit {
+  nTavolo:any;
+  nCoperti:any;
   tables$: Observable<Table[]>;
 
   constructor(private afs:AngularFirestore) {
@@ -26,7 +28,9 @@ export class TavoliComponent implements OnInit {
       }))
     );
   }
-
+  addTable(){
+    console.log(this.nTavolo , this.nCoperti )
+  }
   ngOnInit() {
   }
 

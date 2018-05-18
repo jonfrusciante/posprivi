@@ -3,11 +3,11 @@
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">Aggiungi un tavolo</h5>
-        <p class="card-text"><input name="nTavolo" type="text" placeholder="n.tavolo"></p>
-        <p class="card-text"><input name="nCoperti" type="number" placeholder="n. Coperi massimi"></p>
+        <p class="card-text"><input name="nTavolo" ngModel type="text" placeholder="n.tavolo"></p>
+        <p class="card-text"><input name="nCoperti" ngModel type="number" placeholder="n. Coperi massimi"></p>
 
         <a href="#" class="card-link">Aggiungi</a>
-        <button class="btn btn-primary">Aggiungi</button>
+        <button class="btn btn-primary" (click)="addTable()">Aggiungi</button>
       </div>
     </div>
     <div *ngFor="let table of tables$ | async" class="card" style="width: 18rem;">
