@@ -8,9 +8,9 @@ import {AngularFirestore} from "angularfire2/firestore";
   styleUrls: ['./tichet-order.component.css']
 })
 export class TichetOrderComponent implements OnInit {
-$tickets:Observable<any[]>;
+  $tables:Observable<any[]>;
   constructor(private afs:AngularFirestore) {
-    this.$tickets=this.afs.collection('Tavoli').valueChanges();
+    this.$tables=this.afs.collection('Tavoli').valueChanges();
   }
 
   ngOnInit() {
