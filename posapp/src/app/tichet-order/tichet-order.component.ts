@@ -8,6 +8,7 @@ import {AngularFirestore} from "angularfire2/firestore";
   styleUrls: ['./tichet-order.component.css']
 })
 export class TichetOrderComponent implements OnInit {
+  $orders:Observable<any[]>;
   $tables:Observable<any[]>;
   constructor(private afs:AngularFirestore) {
     this.$tables=this.afs.collection('Tavoli').valueChanges();
@@ -16,4 +17,8 @@ export class TichetOrderComponent implements OnInit {
   ngOnInit() {
   }
 
+  showorder(numero: String | any) {
+   this.$orders = this.afs.collection('Tavoli').doc(numero).collection('ordini').valueChanges();
+
+  }
 }

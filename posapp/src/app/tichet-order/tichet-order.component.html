@@ -3,10 +3,15 @@
 <div class="card" *ngFor="let table of $tables | async">
   <!-- content of the card goes here -->
   <div class="card-header">Tavolo N. {{table.numero}}</div>
-  <div class="card-body">{{table.coperti}}</div>
+  <div class="card-body" (click)="showorder(table.numero)">{{table.coperti}}</div>
   <div  *ngIf="table.islibero" class="card-footer" >status <p>Libero</p></div>
   <div  *ngIf="!table.islibero" class="card-footer" >status <p>Occupato</p></div>
 
 
 </div>
+</div>
+<div class="row">
+  <div class="card" *ngFor="let order of $orders | async">
+    <div class="card-header">{{order | json}}</div>
+  </div>
 </div>

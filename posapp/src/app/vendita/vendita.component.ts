@@ -3,7 +3,6 @@ import {Observable} from "rxjs/Rx";
 import {AngularFirestore} from "angularfire2/firestore";
 import {Prodotti} from "../forms/forms.component";
 import {map} from "rxjs/internal/operators";
-import {isUndefined} from "util";
 export interface OrderTicket{
   id?:string;
   nTavolo:string;
