@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from "rxjs/Rx";
+import {AngularFirestore} from "angularfire2/firestore";
 
 @Component({
   selector: 'app-tichet-order',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tichet-order.component.css']
 })
 export class TichetOrderComponent implements OnInit {
-
-  constructor() { }
+$tickets:Observable<any[]>;
+  constructor(private afs:AngularFirestore) {
+    this.$tickets=this.afs.collection('Tavoli').valueChanges();
+  }
 
   ngOnInit() {
   }

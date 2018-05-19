@@ -1,3 +1,5 @@
-<p>
-  tichet-order works!
-</p>
+
+<div class="card" *ngFor="let table of $tables | async">
+  <!-- content of the card goes here -->
+  <div class="card-body">{{table | json}}</div>
+</div>
