@@ -14,6 +14,6 @@
 </div>
 <div class="row">
   <div class="card" *ngFor="let order of $orders | async">
-    <div class="card-header" *ngFor="let ord of order">{{ord.nome}}</div>
+    <div class="card-header" >{{order}}</div>
   </div>
 </div>
