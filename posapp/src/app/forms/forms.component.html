@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
           <ng-select [(ngModel)]="selectedPrinter" [ngModelOptions]="{standalone: true}" placeholder="Aggiungi Stampanti">
-            <ng-option *ngFor="let printer of optionPrint " [value]="printer.nome" [disabled]="printer.disabled" >{{printer.nome}}</ng-option>
+            <ng-option *ngFor="let printer of optionPrint " [value]="printer.nome"  >{{printer.nome}}</ng-option>
           </ng-select>
         </div>
         <div class="form-group">
