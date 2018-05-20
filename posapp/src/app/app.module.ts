@@ -19,6 +19,8 @@ import {routing} from "./app.routing";
 import {HomeComponent} from "./home/home.component";
 import { AddproductComponent } from './prodotti/addproduct/addproduct.component';
 import { TichetOrderComponent } from './tichet-order/tichet-order.component';
+import { CucinaComponent } from './cucina/cucina.component';
+import { PizzeriaComponent } from './pizzeria/pizzeria.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { TichetOrderComponent } from './tichet-order/tichet-order.component';
     TavoliComponent,
     PageNotFoundComponent,
     AddproductComponent,
-    TichetOrderComponent
+    TichetOrderComponent,
+    CucinaComponent,
+    PizzeriaComponent
   ],
   imports: [
     BrowserModule,
