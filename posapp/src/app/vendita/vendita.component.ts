@@ -81,6 +81,7 @@ export interface OrderTicket {
   }
 
   checkout(order) {
+
     const c = {
       ordine : order ,
       nTavolo : this.selectedtableId,

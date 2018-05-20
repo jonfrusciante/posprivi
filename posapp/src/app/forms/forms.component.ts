@@ -3,10 +3,11 @@ import {NgForm} from "@angular/forms";
 import { AngularFirestore,AngularFirestoreCollection } from 'angularfire2/firestore';
 import {Observable} from "rxjs/index";
 export  interface Prodotti {
-  id?:string
+  id?:string;
   nome:string;
   categoria:string;
   prezzo:number;
+  printer?:string;
 }
 export interface Categorie{
   nome:string;
@@ -18,6 +19,11 @@ export interface Categorie{
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
+  selectedPrinter: any;
+
+  optionPrint = [];
+  printercucina = {name: ''};
+  printerpizzeria={name:''};
   selectedCat:any;
   Categorie$:Observable<Categorie[]>;
   ProdottiCollectionRef:AngularFirestoreCollection<Prodotti>;
@@ -27,6 +33,13 @@ export class FormsComponent implements OnInit {
   constructor(private afs: AngularFirestore) {
   this.ProdottiCollectionRef =this.afs.collection( 'Prodotti');
   this.CategCollRef=this.afs.collection('Categorie_prodotti');
+  this.printerpizzeria.name = 'PizzeriaPrinter';
+  this.printerpizzeria.name = 'CucinaPrinter';
+
+    this.optionPrint.push(this.printercucina);
+    this.optionPrint.push(this.printerpizzeria);
+
+
   }
   AddCategoria(regForm:NgForm){
     let cat:any={};
@@ -40,8 +53,9 @@ export class FormsComponent implements OnInit {
     this.Prodotto.nome=regForm.value.nameitems;
     this.Prodotto.categoria=this.selectedCat;
     this.Prodotto.prezzo=regForm.value.prezzo;
+    this.Prodotto.printer=this.selectedPrinter;
     console.log(this.Prodotto);
-    this.ProdottiCollectionRef.add(this.Prodotto)
+    this.ProdottiCollectionRef.add(this.Prodotto);
     this.Prodotto={};
 
   }
