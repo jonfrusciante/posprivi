@@ -7,6 +7,8 @@ import {TavoliComponent} from "./tavoli/tavoli.component";
 import {PageNotFoundComponent} from "./page-not-found/page-not-found.component";
 import {AddproductComponent} from "./prodotti/addproduct/addproduct.component";
 import {TichetOrderComponent} from "./tichet-order/tichet-order.component";
+import {PizzeriaComponent} from "./pizzeria/pizzeria.component";
+import {CucinaComponent} from "./cucina/cucina.component";
 
 const appRoutes : Routes =
   [
@@ -35,6 +37,16 @@ const appRoutes : Routes =
     {
       path: 'order',
       component: TichetOrderComponent,
+
+    },
+    {
+      path: 'pizzeria',
+      component: PizzeriaComponent,
+
+    },
+    {
+      path: 'cucina',
+      component: CucinaComponent,
 
     },
     {
