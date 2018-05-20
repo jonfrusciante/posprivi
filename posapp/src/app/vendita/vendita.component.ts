@@ -96,5 +96,6 @@ export interface OrderTicket {
 
     this.selectedtableId = undefined;
     this.order = [];
+    this.router.navigate(['./order']);
   }
 }
