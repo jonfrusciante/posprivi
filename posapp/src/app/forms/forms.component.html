@@ -17,7 +17,7 @@
           <span class="help-bpx" *ngIf="prezzo.touched && !prezzo.valid ">Please enter the un prezzo Value</span>
         </div>
         <div class="form-group">
-          <ng-select [(ngModel)]="selectedPrinter" [ngModelOptions]="{standalone: true}" placeholder="Prezzo">
+          <ng-select [(ngModel)]="selectedPrinter" [ngModelOptions]="{standalone: true}" placeholder="Aggiungi Stampanti">
             <ng-option *ngFor="let printer of optionPrint " [value]="printer.nome" [disabled]="printer.disabled" >{{printer.nome}}</ng-option>
           </ng-select>
         </div>

@@ -22,8 +22,8 @@ export class FormsComponent implements OnInit {
   selectedPrinter: any;
 
   optionPrint = [];
-  printercucina = {name: ''};
-  printerpizzeria={name:''};
+  printercucina = {nome: ''};
+  printerpizzeria={nome:''};
   selectedCat:any;
   Categorie$:Observable<Categorie[]>;
   ProdottiCollectionRef:AngularFirestoreCollection<Prodotti>;
@@ -33,8 +33,8 @@ export class FormsComponent implements OnInit {
   constructor(private afs: AngularFirestore) {
   this.ProdottiCollectionRef =this.afs.collection( 'Prodotti');
   this.CategCollRef=this.afs.collection('Categorie_prodotti');
-  this.printerpizzeria.name = 'PizzeriaPrinter';
-  this.printerpizzeria.name = 'CucinaPrinter';
+  this.printerpizzeria.nome = 'PizzeriaPrinter';
+  this.printerpizzeria.nome = 'CucinaPrinter';
 
     this.optionPrint.push(this.printercucina);
     this.optionPrint.push(this.printerpizzeria);
