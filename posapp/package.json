@@ -26,8 +26,11 @@
     "core-js": "^2.5.4",
     "firebase": "^5.0.2",
     "font-awesome": "^4.7.0",
+    "qz-tray": "^2.0.6-1",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.1.0",
+    "sha": "^2.0.1",
+    "ws": "^5.1.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
