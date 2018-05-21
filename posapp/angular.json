@@ -27,7 +27,9 @@
             ],
             "scripts": [
               "src/js/qz-tray.js",
-              "src/js/dependencies/rsvp-3.1.0.min.js"
+              "src/js/dependencies/rsvp-3.1.0.min.js",
+              "src/js/dependencies/sha-256.min.js"
+
             ]
           },
           "configurations": {
