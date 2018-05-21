@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PrinterService} from "../printer.service";
 
 @Component({
   selector: 'app-pizzeria',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PizzeriaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public  prinSer: PrinterService) {
+    prinSer.getPrinters().subscribe(n => console.log(n));
+  }
 
   ngOnInit() {
   }
