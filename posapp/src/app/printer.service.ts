@@ -5,6 +5,7 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import * as qz from 'qz-tray';
 import {AngularFirestore} from "angularfire2/firestore";
+import {map} from "rxjs/internal/operators";
 
 
 @Injectable({
@@ -15,7 +16,13 @@ export class PrinterService {
   selectedhost:string;
   selectedReparto:string;
   constructor(private afs: AngularFirestore) {
-    this.printerAviable = this.afs.collection('printer').valueChanges();
+    this.printerAviable = this.afs.collection('printer').snapshotChanges().pipe(
+      map(actions => actions.map( a => {
+        const data = a.payload.doc.data() ;
+        const id = a.payload.doc.id;
+        return {id, ...data};
+      }))
+    );
   }
   getSavedConfig() {
 
