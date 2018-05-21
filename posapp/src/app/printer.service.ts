@@ -11,11 +11,11 @@ import {AngularFirestore} from "angularfire2/firestore";
   providedIn: 'root'
 })
 export class PrinterService {
-  printerAviable:any;
+  printerAviable:Observable<any[]>;
   selectedhost:string;
   selectedReparto:string;
   constructor(private afs: AngularFirestore) {
-    this.afs.collection('printer').valueChanges().subscribe(printer => this.printerAviable = printer );
+    this.printerAviable = this.afs.collection('printer').valueChanges();
   }
   getSavedConfig() {
 

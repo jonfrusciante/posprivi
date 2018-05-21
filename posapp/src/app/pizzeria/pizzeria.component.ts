@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PrinterService} from '../printer.service';
+import {Observable} from "rxjs/Rx";
 
 @Component({
   selector: 'app-pizzeria',
@@ -8,10 +9,9 @@ import {PrinterService} from '../printer.service';
 })
 export class PizzeriaComponent implements OnInit {
   rep: string ; host: string;
-printerAvia: any;
+ printerAvia: Observable<any[]>;
   constructor(public  prinSer: PrinterService) {
     this.printerAvia = prinSer.printerAviable;
-    console.log(this.printerAvia);
     prinSer.getPrinters().subscribe(n => console.log( n));
   }
   addStampante() {
