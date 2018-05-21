@@ -21,7 +21,7 @@ export class TavoliComponent implements OnInit {
   constructor(private afs: AngularFirestore) {
     this.tables$ = this.afs.collection<Table[]>('Tavoli').snapshotChanges().pipe(
       map (actions => actions.map( a => {
-        const data = a.payload.doc.data() as Table;
+        const data = a.payload.doc.data() ;
         const id = a.payload.doc.id;
         return {id, ...data};
       }))
