@@ -24,7 +24,7 @@
     "angularfire2": "^5.0.0-rc.5-next",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
-    "firebase": "^5.0.3",
+    "firebase": "^5.0.1",
     "font-awesome": "^4.7.0",
     "qz-tray": "^2.0.6-1",
     "rsvp": "^4.8.2",
