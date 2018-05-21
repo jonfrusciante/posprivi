@@ -25,7 +25,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "/src/app/js/qz-tray.js",
+              "src/app/js/dependencies/rsvp-3.1.0.min.js"
+            ]
           },
           "configurations": {
             "production": {
