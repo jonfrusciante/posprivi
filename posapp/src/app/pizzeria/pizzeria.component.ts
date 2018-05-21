@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PrinterService} from "../printer.service";
+import {PrinterService} from '../printer.service';
 
 @Component({
   selector: 'app-pizzeria',
@@ -8,7 +8,7 @@ import {PrinterService} from "../printer.service";
 })
 export class PizzeriaComponent implements OnInit {
   rep: string ; host: string;
-printerAvia:any;
+printerAvia: any;
   constructor(public  prinSer: PrinterService) {
     this.printerAvia = prinSer.printerAviable;
     console.log(this.printerAvia);
