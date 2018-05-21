@@ -4,14 +4,25 @@ import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import * as qz from 'qz-tray';
+import {AngularFirestore} from "angularfire2/firestore";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrinterService {
+  printerAviable:any;
+  selectedhost:string;
+  selectedReparto:string;
+  constructor(private afs: AngularFirestore) {
+    this.afs.collection('printer').valueChanges().subscribe(printer => this.printerAviable = printer );
+  }
+  getSavedConfig() {
 
-  constructor() { }
+  }
+  setConfigPrinter(host: string, reparto: string  ){
+    this.afs.collection('printer').doc(reparto).set({host: host});
+  }
   errorHandler(error: any): Observable<any> {
     return Observable.throw(error);
   }
