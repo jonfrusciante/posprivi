@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs/Rx";
-import {AngularFirestore} from "angularfire2/firestore";
-import {map} from "rxjs/internal/operators";
-export interface Table{
-  id?:string;
-  islibero:boolean;
-  numero:string;
-  coperti:number;
+import {Observable} from 'rxjs/Rx';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {map} from 'rxjs/internal/operators';
+export interface Table {
+  id?: string;
+  islibero: boolean;
+  numero: string;
+  coperti: number;
 }
 @Component({
   selector: 'app-tavoli',
@@ -14,29 +14,28 @@ export interface Table{
   styleUrls: ['./tavoli.component.css']
 })
 export class TavoliComponent implements OnInit {
-  nTavolo:any;
-  nCoperti:any;
-  tables$: Observable<Table[]>;
+  nTavolo: any;
+  nCoperti: any;
+  tables$: Observable<any[]>;
 
-  constructor(private afs:AngularFirestore) {
-    this.tables$=this.afs.collection<Table[]>('Tavoli').snapshotChanges().pipe(
-      map (actions => actions.map( a =>
-      {
+  constructor(private afs: AngularFirestore) {
+    this.tables$ = this.afs.collection<Table[]>('Tavoli').snapshotChanges().pipe(
+      map (actions => actions.map( a => {
         const data = a.payload.doc.data() as Table;
         const id = a.payload.doc.id;
         return {id, ...data};
       }))
     );
   }
-  deleteTable(id){
+  deleteTable(id) {
     this.afs.collection('Tavoli').doc(id).delete();
   }
-  addTable(){
+  addTable() {
     console.log(this.nTavolo , this.nCoperti );
-    let Tavolo:Table={
-    islibero:true,
-    numero:this.nTavolo,
-    coperti:this.nCoperti
+    const Tavolo: Table = {
+    islibero: true,
+    numero: this.nTavolo,
+    coperti: this.nCoperti
     };
     this.afs.collection('Tavoli').doc(this.nTavolo).set(Tavolo);
   }
