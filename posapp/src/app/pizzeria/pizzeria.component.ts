@@ -9,7 +9,7 @@ import {PrinterService} from "../printer.service";
 export class PizzeriaComponent implements OnInit {
 
   constructor(public  prinSer: PrinterService) {
-    prinSer.getPrinters().subscribe(n => console.log(n));
+    prinSer.getPrinters().subscribe(n => console.log('test' , n));
   }
 
   ngOnInit() {
