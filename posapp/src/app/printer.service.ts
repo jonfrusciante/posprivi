@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs/Rx";
+import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
