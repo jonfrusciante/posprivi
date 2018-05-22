@@ -26,9 +26,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr id='addr0' *ngFor="let stm of printerAvia | async">
+        <tr id='addr0' *ngFor="let stm of printerAvia ; let i=index | async">
           <td>
-            {{stm.id}}
+            {{i+1}}
           </td>
           <td>
             {{stm.id}}
