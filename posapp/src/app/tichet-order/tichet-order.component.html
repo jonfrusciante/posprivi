@@ -15,7 +15,7 @@
 <div class="row">
   <div  class="card " *ngFor="let order of $orders | async">
     <div *ngFor="let ord of order.ordine">
-    <div class="card-header" #ticket>articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}}</div>
+    <div #ticket class="card-header" >articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}}</div>
     </div>
 
     <div class="card-footer"> modificato at:{{order.data_modifica.seconds * 1000 | date:'full'}}</div>
