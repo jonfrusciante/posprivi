@@ -28,7 +28,10 @@ export class PrinterService {
 
   }
   setConfigPrinter(host: string, reparto: string , selectedPrinter: string ) {
-    this.afs.collection('printer').doc(reparto).set({host: host, selectedPrinter: selectedPrinter});
+    let c = { host: host ,
+      printer: selectedPrinter
+    };
+    this.afs.collection('printer').doc(reparto).set(c);
   }
   errorHandler(error: any): Observable<any> {
     return Observable.throw(error);
