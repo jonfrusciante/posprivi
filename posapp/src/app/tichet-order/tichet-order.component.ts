@@ -33,7 +33,8 @@ export class TichetOrderComponent implements OnInit {
   }
   stampa() {
     const data = this.div.nativeElement.innerHTML;
-    this.prinSer.printFinal(data);
+    console.log(data);
+    // this.prinSer.printFinal(data);
 
 
   }
