@@ -2,7 +2,7 @@
   <div class="input-group">
     <input [(ngModel)]="rep" type="text" placeholder="nome reparto" >
     <input [(ngModel)]="host" type="text" placeholder="host stampante">
-    <ng-select [(ngModel)]="stampanteSel" [ngModelOptions]="{standalone: true}" placeholder="Aggiungi Stampanti"><ng-option *ngFor="let stam of installedPrinter | async">{{stam}}</ng-option></ng-select>
+    <ng-select [(ngModel)]="stampanteSel" [ngModelOptions]="{standalone: true}" placeholder="Aggiungi Stampanti"><ng-option *ngFor="let stam of installedPrinter | async" [value]="{{stam}}">{{stam}}</ng-option></ng-select>
     <button class="btn btn-primary" (click)="addStampante()">Aggiungi stampante</button>
   </div>
 </div>
@@ -11,7 +11,7 @@
     <div class="col-md-12 column">
       <table class="table table-bordered table-hover" id="tab_logic">
         <thead>
-        <tr >
+        <tr>
           <th class="text-center">
             #
           </th>
