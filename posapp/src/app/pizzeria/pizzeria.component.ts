@@ -21,7 +21,7 @@ export class PizzeriaComponent implements OnInit {
   constructor(private  prinSer: PrinterService, private afs: AngularFirestore) {
     this.printerAvia = prinSer.printerAviable;
     this.installedPrinter = prinSer.getPrinters();
-    this.orders$ = this.afs.collection('Tavoli').doc('3').collection('ordini').snapshotChanges().pipe(
+    this.orders$ = this.afs.collection('Tavoli').doc('3' ).collection('ordini').snapshotChanges().pipe(
       map(actions => actions.map( a => {
         const data = a.payload.doc.data() ;
         const id = a.payload.doc.id;
