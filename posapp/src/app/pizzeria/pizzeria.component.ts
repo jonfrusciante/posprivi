@@ -27,7 +27,7 @@ export class PizzeriaComponent implements OnInit {
   }
 
   printP() {
-    const data="ciao a  tuttti";
+    const data = {};
   this.prinSer.schegli('pizzeria').subscribe(n => this.prinSer.printData(n.printer, data).subscribe(nn => console.log(nn))) ; //  this.prinSer.printData()
   }
 }
