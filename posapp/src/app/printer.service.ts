@@ -31,6 +31,7 @@ export class PrinterService {
       format: 'plain', // or 'plain' if the data is raw HTML
       data: ticketToPrint
     }];
+    console.log(data);
      this.schegli('pizzeria').subscribe(n => this.printData(n.printer, data).subscribe(nn => console.log(nn))) ; //  this.prinSer.printData()
   }
 
