@@ -12,7 +12,7 @@
 
 </div>
 </div>
-<div  class="row ">
+<div  #ticket  class="row ">
   <div  class="card " *ngFor="let order of $orders | async">
     <div  *ngFor="let ord of order.ordine">
     <div  class="card-header">articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}}</div>
@@ -23,5 +23,3 @@
     <button class="btn btn-info" (click)="stampa()">Stampa</button>
   </div>
 </div>
-<div #ticket class="text-center">testing</div>
-<app-magazino ></app-magazino>
