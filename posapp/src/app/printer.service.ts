@@ -17,6 +17,7 @@ export class PrinterService {
   selectedReparto:string;
   ticketToPrint: any;
   constructor(private afs: AngularFirestore) {
+
     this.printerAviable = this.afs.collection('printer').snapshotChanges().pipe(
       map(actions => actions.map( a => {
         const data = a.payload.doc.data() ;
@@ -24,6 +25,7 @@ export class PrinterService {
         return {id, ...data};
       }))
     );
+    this.getPrinters();
   }
   printFinal(ticketToPrint) {
     const data = [{
@@ -31,7 +33,6 @@ export class PrinterService {
       format: 'plain', // or 'plain' if the data is raw HTML
       data: ticketToPrint
     }];
-    console.log(data);
      this.schegli('pizzeria').subscribe(n => this.printData(n.printer, data).subscribe(nn => console.log(nn))) ; //  this.prinSer.printData()
   }
 
