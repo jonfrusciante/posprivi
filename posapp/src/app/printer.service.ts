@@ -33,6 +33,9 @@ export class PrinterService {
     };
     this.afs.collection('printer').doc(reparto).set(c);
   }
+  schegli(schelta): Observable<any> {
+    return    this.afs.collection('printer').doc(schelta).valueChanges();
+  }
   errorHandler(error: any): Observable<any> {
     return Observable.throw(error);
   }

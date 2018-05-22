@@ -22,4 +22,12 @@ export class PizzeriaComponent implements OnInit {
   ngOnInit() {
   }
 
+  modificarow() {
+
+  }
+
+  printP() {
+    const data="ciao a  tuttti";
+  this.prinSer.schegli('pizzeria').subscribe(n => this.prinSer.printData(n.printer, data)) ; //  this.prinSer.printData()
+  }
 }
