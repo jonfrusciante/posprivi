@@ -27,7 +27,11 @@ export class PizzeriaComponent implements OnInit {
   }
 
   printP() {
-    const data = {};
+    const data = [
+      'Raw Data\n',
+      'More Raw Data\n',
+      'Even More Raw Data\n'
+    ];
   this.prinSer.schegli('pizzeria').subscribe(n => this.prinSer.printData(n.printer, data).subscribe(nn => console.log(nn))) ; //  this.prinSer.printData()
   }
 }
