@@ -22,7 +22,7 @@
             Host
           </th>
           <th class="text-center">
-            Mobile
+            Stampante Selezionata
           </th>
         </tr>
         </thead>
@@ -39,8 +39,13 @@
             {{stm.host}}
             <input [(ngModel)]="host" type="text" placeholder={{stm.host}} class="form-control"/>
           </td>
-
+          <td>
+            {{stm.selectedPrinter}}
+          </td>
         </tr>
+        <td>
+          <button class="btn btn-danger" (click)="modificarow()" >Modifica</button>
+        </td>
         <tr id='addr1'></tr>
         </tbody>
       </table>

@@ -27,8 +27,8 @@ export class PrinterService {
   getSavedConfig() {
 
   }
-  setConfigPrinter(host: string, reparto: string  ){
-    this.afs.collection('printer').doc(reparto).set({host: host});
+  setConfigPrinter(host: string, reparto: string , selectedPrinter: string ) {
+    this.afs.collection('printer').doc(reparto).set({host: host, selectedPrinter: selectedPrinter});
   }
   errorHandler(error: any): Observable<any> {
     return Observable.throw(error);

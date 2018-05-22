@@ -17,7 +17,7 @@ export class PizzeriaComponent implements OnInit {
     this.installedPrinter = prinSer.getPrinters() ;
   }
   addStampante() {
-    this.prinSer.setConfigPrinter(this.host, this.rep);
+    this.prinSer.setConfigPrinter(this.host, this.rep, this.stampanteSel);
   }
   ngOnInit() {
   }
