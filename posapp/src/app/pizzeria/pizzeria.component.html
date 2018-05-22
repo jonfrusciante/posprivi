@@ -32,11 +32,11 @@
           </td>
           <td>
             {{stm.id}}
-            <input [(ngModel)]="rep" type="text" placeholder="nome reparto" class="form-control"/>
+            <input [(ngModel)]="rep" type="text" placeholder= {{stm.id}} class="form-control"/>
           </td>
           <td>
             {{stm.host}}
-            <input [(ngModel)]="host" type="text" placeholder="host stampante" class="form-control"/>
+            <input [(ngModel)]="host" type="text" placeholder={{stm.host}} class="form-control"/>
           </td>
 
         </tr>
@@ -44,7 +44,7 @@
         </tbody>
       </table>
     </div>
-    <button (click)="addStampante()" id="add_row" class="btn btn-default pull-left">Add Row</button><a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
+    <button (click)="addStampante()" id="add_row" class="btn btn-default pull-left">Modifica</button><a id='delete_row' class="pull-right btn btn-default">Delete Row</a>
 
   </div>
 </div>
