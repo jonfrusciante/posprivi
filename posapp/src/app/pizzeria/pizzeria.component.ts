@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PrinterService} from '../printer.service';
 import {Observable} from 'rxjs/Rx';
+import {map} from "rxjs/internal/operators";
 
 @Component({
   selector: 'app-pizzeria',
@@ -32,6 +33,6 @@ export class PizzeriaComponent implements OnInit {
       'More Raw Data\n',
       'Even More Raw Data\n'
     ];
-  this.prinSer.schegli('pizzeria').subscribe(n => this.prinSer.printData(n.printer, data).subscribe(nn => console.log(nn))) ; //  this.prinSer.printData()
+  this.prinSer.schegli('pizzeria').pipe( map ( n => this.prinSer.printData(n.printer, data).subscribe())) ; //  this.prinSer.printData()
   }
 }
