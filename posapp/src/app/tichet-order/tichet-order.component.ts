@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {map} from 'rxjs/internal/operators';
 import {Prodotti} from '../forms/forms.component';
+import {PrinterService} from '../printer.service';
 
 @Component({
   selector: 'app-tichet-order',
@@ -10,9 +11,10 @@ import {Prodotti} from '../forms/forms.component';
   styleUrls: ['./tichet-order.component.css']
 })
 export class TichetOrderComponent implements OnInit {
+  @ViewChild('ticket') div: ElementRef;
   $orders: Observable<any[]>;
   $tables: Observable<any[]>;
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore , private prinSer: PrinterService) {
     this.$tables = this.afs.collection('Tavoli').valueChanges();
   }
 
@@ -27,6 +29,12 @@ export class TichetOrderComponent implements OnInit {
        return {id, ...data};
      }))
    );
+
+  }
+  stampa() {
+    const data = this.div.nativeElement.innerHTML;
+    this.prinSer.printFinal(data);
+
 
   }
 
