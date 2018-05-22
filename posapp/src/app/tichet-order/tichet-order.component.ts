@@ -5,6 +5,7 @@ import {map} from 'rxjs/internal/operators';
 import {Prodotti} from '../forms/forms.component';
 import {PrinterService} from '../printer.service';
 
+
 @Component({
   selector: 'app-tichet-order',
   templateUrl: './tichet-order.component.html',

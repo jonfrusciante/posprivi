@@ -21,6 +21,7 @@ import { AddproductComponent } from './prodotti/addproduct/addproduct.component'
 import { TichetOrderComponent } from './tichet-order/tichet-order.component';
 import { CucinaComponent } from './cucina/cucina.component';
 import { PizzeriaComponent } from './pizzeria/pizzeria.component';
+import {MagazinoComponent} from "./magazino/magazino.component";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { PizzeriaComponent } from './pizzeria/pizzeria.component';
     AddproductComponent,
     TichetOrderComponent,
     CucinaComponent,
-    PizzeriaComponent
+    PizzeriaComponent,
+    MagazinoComponent
   ],
   imports: [
     BrowserModule,
