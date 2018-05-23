@@ -32,7 +32,7 @@ export class PrinterService {
       format: 'plain', // or 'plain' if the data is raw HTML
       data: ticketToPrint
     }];
-     this.schegli('pizzeria').subscribe(n => this.printData(n.printer, data).subscribe(nn => console.log(nn))) ; //  this.prinSer.printData()
+     this.schegli('pizzeria').subscribe(n => this.printDataPizz(n.printer, data).subscribe(nn => console.log(nn))) ; //  this.prinSer.printData()
   }
 
 
@@ -72,13 +72,21 @@ export class PrinterService {
   printData(printer: string, data: any): Observable<any> {
 
     // Create a default config for the found printer
-    
+
     const config = qz.configs.create(printer);
     return Observable.fromPromise(qz.websocket.connect().then(() => qz.print(config, data)))
       .map((anything: any) => anything)
       .catch(this.errorHandler);
   }
+  printDataPizz(printer: string, data: any): Observable<any> {
 
+    // Create a default config for the found printer
+
+    const config = qz.configs.create(printer);
+    return Observable.fromPromise(qz.print(config, data))
+      .map((anything: any) => anything)
+      .catch(this.errorHandler);
+  }
 // Disconnect QZ Tray from the browser
   removePrinter(): void {
     qz.websocket.disconnect();
