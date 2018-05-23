@@ -17,6 +17,7 @@ export class PizzeriaComponent implements OnInit {
   host: string;
   printerAvia: Observable<any[]>;
   installedPrinter: Observable<any[]>;
+  order:any;
 
   constructor(private  prinSer: PrinterService, private afs: AngularFirestore) {
     this.printerAvia = prinSer.printerAviable;
@@ -28,6 +29,7 @@ export class PizzeriaComponent implements OnInit {
         return {id, ...data};
       }))
     );
+    this.orders$.subscribe(n => this.order = n);
   }
 
   addStampante() {
@@ -42,7 +44,8 @@ export class PizzeriaComponent implements OnInit {
   }
 
   printP() {
+    console.log(this.order);
     const data = this.div.nativeElement.innerHTML;
-    this.prinSer.printFinal(data);
+    //this.prinSer.printFinal(data);
   }
 }
