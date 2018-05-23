@@ -50,10 +50,10 @@ export interface OrderTicket {
     console.log(this.order);
 
   }
-  sott(){
+  sottQ(){
     this.quantity = -1;
   }
-  add(){
+  addQ(){
     this.quantity = +1;
   }
   ngOnInit() {
