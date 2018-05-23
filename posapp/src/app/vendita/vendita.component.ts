@@ -25,7 +25,7 @@ export interface OrderTicket {
   Prodotto$: Observable<any>;
   Product: Observable<any[]>;
   private sub: any;
-
+  quantity = 1;
   constructor(private  afs: AngularFirestore , private route: ActivatedRoute,
               private router: Router) {
     this.Table$ = this.afs.collection('Tavoli').valueChanges();
@@ -49,6 +49,12 @@ export interface OrderTicket {
 
     console.log(this.order);
 
+  }
+  sott(){
+    this.quantity = -1;
+  }
+  add(){
+    this.quantity = +1;
   }
   ngOnInit() {
     this.sub = this.route
