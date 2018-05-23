@@ -48,7 +48,7 @@ ${this.div.nativeElement.innerHTML}
 
 </html>`;
     console.log(data);
-    this.prinSer.printFinal(data);
+    this.prinSer.printFinal(data) ;
 
 
   }
