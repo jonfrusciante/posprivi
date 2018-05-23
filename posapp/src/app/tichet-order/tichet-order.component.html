@@ -13,13 +13,34 @@
 </div>
 </div>
 <div  #ticket  class="row ">
-  <div  class="card " *ngFor="let order of $orders | async">
+  <div  class="card " >
+    <div *ngFor="let order of $orders | async">
     <div  *ngFor="let ord of order.ordine">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Qty</th>
+          <th scope="col">Articolo</th>
+          <th scope="col">Quantita</th>
+          <th scope="col">Prezzo</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">{{ord.quantity}}</th>
+          <td>{{ord.nome}}</td>
+          <td>{{ord.prezzo}}</td>
+        </tr>
+
+        </tbody>
+      </table>
     <div  class="card-header">articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}} | quantity:{{ord.quantity}}</div>
     </div>
 
     <div class="card-footer"> modificato at:{{order.data_modifica.seconds * 1000 | date:'full'}}</div>
-    <button class="btn btn-danger" (click)="completa(order)">Paga</button>
-    <button class="btn btn-info" (click)="stampa()">Stampa</button>
+
   </div>
+  </div>
+  <button class="btn btn-danger" (click)="completa(order)">Paga</button>
+  <button class="btn btn-info" (click)="stampa()">Stampa</button>
 </div>
