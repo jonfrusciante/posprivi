@@ -51,10 +51,10 @@ export interface OrderTicket {
 
   }
   sottQ(){
-    this.quantity = -1;
+    this.quantity = this.quantity--;
   }
   addQ(){
-    this.quantity = +1;
+    this.quantity = this.quantity++;
   }
   ngOnInit() {
     this.sub = this.route
