@@ -110,10 +110,8 @@ export interface OrderTicket {
       data_modifica: this.now
 
     };
-    this.afs.collection('OrderTicket').add(c);
     this.afs.collection('Tavoli').doc(c.nTavolo).update({islibero: false});
     this.afs.collection('Tavoli').doc(c.nTavolo).collection('ordini').add(c);
-
     console.log(c);
 
     this.selectedtableId = undefined;
