@@ -44,16 +44,17 @@ export interface OrderTicket {
   addproduct(productId) {
     this.afs.collection('Prodotti').doc<Prodotti>(productId).valueChanges().subscribe(s => {
       s.id = productId;
-      this.order.map( o => { if ( o.id === s.id ) {  o.quantity = o.quantity + 1; console.log('sameproduct') ; } else {
-        this.order.push(s);
+      if (this.order.map( o =>   o.id === s.id )){
+        console.log('si');
       }
-      });
+      this.order.push(s);
+
     });
 
     console.log(this.order);
 
   }
-  sottQ() {
+  sottQ(){
     this.quantity = this.quantity--;
   }
   addQ(){
