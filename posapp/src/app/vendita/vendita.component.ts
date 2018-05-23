@@ -46,7 +46,7 @@ export interface OrderTicket {
       s.id = productId;
       let flag = 0;
       console.log(this.order);
-      for (let i = 0; i < array.length; i++) {
+      for (let i = 0; i < this.order.length; i++) {
         if (s.id === this.order[i].id) {
           flag = 1;
         }
