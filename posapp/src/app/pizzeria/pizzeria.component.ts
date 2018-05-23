@@ -44,8 +44,8 @@ export class PizzeriaComponent implements OnInit {
   }
 
   printP() {
-    console.log(this.order);
+    console.log(this.order.ordine);
     const data = this.div.nativeElement.innerHTML;
-    //this.prinSer.printFinal(data);
+     // this.prinSer.printFinal(data);
   }
 }
