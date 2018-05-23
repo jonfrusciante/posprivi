@@ -54,13 +54,14 @@ export class PizzeriaComponent implements OnInit {
   ngOnInit() {
   }
 
-  modificarow() {
+  modificarow(prod) {
 
+  return ` `;
   }
 
   printP() {
-    const prod = this.order.map(n => n.ordine.map( k => k.nome ) ) ;
-    const prezz = this.order.map(n => n.ordine.map( k => k.prezzo ) ) ;
+    const prod = this.order.map(n => n.ordine.map( k =>  ` <td>${ k.nome }</td> ` ) )  ;
+    const prezz = this.order.map(n => n.ordine.map( k => ` <td>${ k.prezzo }</td> ` ) ) ;
 
     const data =
       `
@@ -84,8 +85,8 @@ export class PizzeriaComponent implements OnInit {
     </thead>
     <tbody>
       <tr>
-        <td>${ prod }</td>
-                <td>${ prezz }</td>
+        ${prod}
+        ${ prezz }
 
       </tr>
     </tbody>
