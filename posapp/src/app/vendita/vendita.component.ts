@@ -44,7 +44,7 @@ export interface OrderTicket {
   addproduct(productId) {
     this.afs.collection('Prodotti').doc<Prodotti>(productId).valueChanges().subscribe(s => {
       s.id = productId;
-      if (this.order.map( o =>   o.id === s.id )){
+      if (this.order.includes( s.id)){
         console.log('si');
       }
       this.order.push(s);
