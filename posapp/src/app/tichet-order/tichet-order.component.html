@@ -35,12 +35,11 @@
 
         </tbody>
       </table>
-    <div  class="card-header">articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}} | quantity:{{ord.quantity}}</div>
-    </div>
-
-    <div class="card-footer"> modificato at:{{order.data_modifica.seconds * 1000 | date:'full'}}</div>
+       <div class="card-footer"> modificato at:{{order.data_modifica.seconds * 1000 | date:'full'}}</div>
+      <div class="align-center">
       <button class="btn btn-danger" (click)="completa(order)">Paga</button>
       <button class="btn btn-info" (click)="stampa()">Stampa</button>
+      </div>
   </div>
   </div>
 
