@@ -46,7 +46,7 @@ export interface OrderTicket {
       s.id = productId;
       console.log(this.order);
 
-      if (this.order.includes(s.nome)){
+      if (this.order.includes(s)){
         console.log('si');
       }
       this.order.push(s);
