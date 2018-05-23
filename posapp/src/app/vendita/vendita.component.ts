@@ -44,21 +44,31 @@ export interface OrderTicket {
   addproduct(productId) {
     this.afs.collection('Prodotti').doc<Prodotti>(productId).valueChanges().subscribe(s => {
       s.id = productId;
+      let flag = 0;
       console.log(this.order);
-
-      if (this.order.includes(s)){
-        console.log('si');
+      for (let i = 0; i < array.length; i++) {
+        if (s.id === this.order[i].id) {
+          flag = 1;
+        }
       }
+
+//Check if flag value changed.
+      if (flag === 1) {
+        console.log('Element Found');
+      } else {
+       console.log('Element Not Found');
+      }
+
       this.order.push(s);
 
     });
 
 
   }
-  sottQ(){
+  sottQ() {
     this.quantity = this.quantity--;
   }
-  addQ(){
+  addQ() {
     this.quantity = this.quantity++;
   }
   ngOnInit() {
