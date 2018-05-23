@@ -8,6 +8,7 @@ export  interface Prodotti {
   categoria:string;
   prezzo:number;
   printer?:string;
+  quantity?:number;
 }
 export interface Categorie{
   nome:string;

@@ -46,6 +46,7 @@
             <ul class="list-group">
               <div class="text-center h3">Tavolo Selezionato {{selectedtableId}}</div>
               <li class="list-group-item" *ngFor=" let item of order ; let i = index   ">
+
                 <div class="input-group">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button" id="btn-plus" (click)="sottQ(item.quantity = item.quantity - 1) "><span class="fa fa-minus"></span></button>
