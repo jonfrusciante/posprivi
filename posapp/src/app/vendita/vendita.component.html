@@ -50,7 +50,7 @@
       <span class="input-group-btn">
         <button class="btn btn-default" type="button" id="btn-plus" (click)="sottQ() "><span class="fa fa-minus"></span></button>
       </span>
-                  <input [(ngModel)]="quantity" type="text" class="form-control" name="qty" id="qty" >
+                  <input [(ngModel)]="quantity" type="text" class="form-control" name="qty" id="qty" [value]="quantity" >
                   <span class="input-group-btn">
         <button class="btn btn-default" type="button" id="btn-minus" (click)="addQ"><span class="fa fa-plus"></span></button>
       </span>
