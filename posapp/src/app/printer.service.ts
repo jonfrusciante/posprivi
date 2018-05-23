@@ -25,7 +25,6 @@ export class PrinterService {
         return {id, ...data};
       }))
     );
-    this.getPrinters();
   }
   printFinal(ticketToPrint) {
     const data = [{
@@ -71,7 +70,9 @@ export class PrinterService {
 
 // Print data to chosen printer
   printData(printer: string, data: any): Observable<any> {
+
     // Create a default config for the found printer
+    qz.websocket.connect();
     const config = qz.configs.create(printer);
     return Observable.fromPromise(qz.print(config, data))
       .map((anything: any) => anything)

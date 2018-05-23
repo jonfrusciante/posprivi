@@ -19,7 +19,8 @@ export class TichetOrderComponent implements OnInit ,OnDestroy{
     this.$tables = this.afs.collection('Tavoli').valueChanges();
   }
 
-  ngOnInit() {
+  ngOnInit()
+  {
   }
   ngOnDestroy() {
     // this.prinSer.removePrinter();
