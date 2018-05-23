@@ -54,6 +54,7 @@ export class FormsComponent implements OnInit {
     this.Prodotto.categoria=this.selectedCat;
     this.Prodotto.prezzo=regForm.value.prezzo;
     this.Prodotto.printer=this.selectedPrinter;
+    this.Prodotto.quantity=1;
     console.log(this.Prodotto);
     this.ProdottiCollectionRef.add(this.Prodotto);
     this.Prodotto={};
