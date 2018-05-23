@@ -22,7 +22,7 @@ export class TichetOrderComponent implements OnInit ,OnDestroy{
   ngOnInit() {
   }
   ngOnDestroy() {
-    this.prinSer.removePrinter();
+    // this.prinSer.removePrinter();
 }
   showorder(numero: String | any) {
    this.$orders = this.afs.collection('Tavoli').doc(numero).collection('ordini').snapshotChanges().pipe(
