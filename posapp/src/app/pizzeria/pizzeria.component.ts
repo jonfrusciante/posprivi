@@ -62,8 +62,7 @@ export class PizzeriaComponent implements OnInit {
   printP() {
     const prod = this.order.map(n => n.ordine.map( k =>  ` <td>${ k.nome }</td> ` ) )  ;
     const prezz = this.order.map(n => n.ordine.map( k => ` <td>${ k.prezzo }</td> ` ) ) ;
-
-    const data =
+     const data =
       `
 <!DOCTYPE HTML>
 <html>
@@ -96,6 +95,8 @@ export class PizzeriaComponent implements OnInit {
 
 </html>`;
     // const data = this.div.nativeElement.innerHTML;
-      this.prinSer.printFinal(data);
+    console.log(data);
+
+    this.prinSer.printFinal(data);
   }
 }
