@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {map} from 'rxjs/internal/operators';
@@ -11,7 +11,7 @@ import {PrinterService} from '../printer.service';
   templateUrl: './tichet-order.component.html',
   styleUrls: ['./tichet-order.component.css']
 })
-export class TichetOrderComponent implements OnInit {
+export class TichetOrderComponent implements OnInit ,OnDestroy{
   @ViewChild('ticket') div: ElementRef;
   $orders: Observable<any[]>;
   $tables: Observable<any[]>;
@@ -21,7 +21,9 @@ export class TichetOrderComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  ngOnDestroy() {
+    this.prinSer.removePrinter();
+}
   showorder(numero: String | any) {
    this.$orders = this.afs.collection('Tavoli').doc(numero).collection('ordini').snapshotChanges().pipe(
      map(actions => actions.map( a => {
