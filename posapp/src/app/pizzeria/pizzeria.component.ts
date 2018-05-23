@@ -1,29 +1,29 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {PrinterService} from '../printer.service';
 import {Observable} from 'rxjs/Rx';
-import {AngularFirestore} from "angularfire2/firestore";
-import {map} from "rxjs/internal/operators";
-import Order = jasmine.Order;
+import {AngularFirestore} from 'angularfire2/firestore';
+import {map} from 'rxjs/internal/operators';
+export interface Ordine {
+  categoria: string;
+  nome: string;
+  prezzo: number;
+  id?: string;
+  printer: string;
+}
+export interface TicketOrder {
+  data_modifica: Date;
+  id?: string;
+  ordine: Ordine[];
+  status: string;
+
+}
 
 @Component({
   selector: 'app-pizzeria',
   templateUrl: './pizzeria.component.html',
   styleUrls: ['./pizzeria.component.css']
 })
-export interface Ordine {
-  categoria:string;
-  nome:string;
-  prezzo:number;
-  id?:string;
-  printer:string;
-}
-export interface TicketOrder{
-  data_modifica:Date;
-  id?:string;
-  ordine: Ordine[];
-  status:string;
 
-}
 export class PizzeriaComponent implements OnInit {
   @ViewChild('ticket') div: ElementRef;
   orders$: Observable<TicketOrder[]>;
@@ -60,7 +60,7 @@ export class PizzeriaComponent implements OnInit {
 
   printP() {
     console.log(this.order.map(n => console.log(n.ordine)));
-    const data = this.div.nativeElement.innerHTML;
+   // const data = this.div.nativeElement.innerHTML;
      // this.prinSer.printFinal(data);
   }
 }
