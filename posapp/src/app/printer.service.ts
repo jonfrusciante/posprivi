@@ -76,7 +76,7 @@ export class PrinterService {
     const config = qz.configs.create(printer);
     return Observable.fromPromise(qz.websocket.connect().then(qz.print(config, data)
       .map((anything: any) => anything)
-      .catch(this.errorHandler));
+      .catch(this.errorHandler)));
   }
 
 // Disconnect QZ Tray from the browser
