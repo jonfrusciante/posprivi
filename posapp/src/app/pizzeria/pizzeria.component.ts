@@ -89,6 +89,8 @@ export class PizzeriaComponent implements OnInit {
     <tbody>
       <tr>
         ${prod}
+        </tr>
+        <tr>
         ${ prezz }
 
       </tr>
