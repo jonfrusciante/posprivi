@@ -4,17 +4,17 @@ import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map';
 import * as qz from 'qz-tray';
-import {AngularFirestore} from "angularfire2/firestore";
-import {map} from "rxjs/internal/operators";
+import {AngularFirestore} from 'angularfire2/firestore';
+import {map} from 'rxjs/internal/operators';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrinterService {
-  printerAviable:Observable<any[]>;
-  selectedhost:string;
-  selectedReparto:string;
+  printerAviable: Observable<any[]>;
+  selectedhost: string;
+  selectedReparto: string;
   ticketToPrint: any;
   constructor(private afs: AngularFirestore) {
 
@@ -40,7 +40,7 @@ export class PrinterService {
 
   }
   setConfigPrinter(host: string, reparto: string , selectedPrinter: string ) {
-    let c = { host: host ,
+    const c = { host: host ,
       printer: selectedPrinter
     };
     this.afs.collection('printer').doc(reparto).set(c);
@@ -72,11 +72,11 @@ export class PrinterService {
   printData(printer: string, data: any): Observable<any> {
 
     // Create a default config for the found printer
-    qz.websocket.connect();
+
     const config = qz.configs.create(printer);
-    return Observable.fromPromise(qz.print(config, data))
+    return Observable.fromPromise(qz.websocket.connect().then(qz.print(config, data)
       .map((anything: any) => anything)
-      .catch(this.errorHandler);
+      .catch(this.errorHandler));
   }
 
 // Disconnect QZ Tray from the browser
