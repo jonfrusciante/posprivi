@@ -44,14 +44,15 @@ export interface OrderTicket {
   addproduct(productId) {
     this.afs.collection('Prodotti').doc<Prodotti>(productId).valueChanges().subscribe(s => {
       s.id = productId;
-      if (this.order.includes( s.id)){
+      console.log(this.order);
+
+      if (this.order.includes(s.nome)){
         console.log('si');
       }
       this.order.push(s);
 
     });
 
-    console.log(this.order);
 
   }
   sottQ(){
