@@ -46,15 +46,16 @@
             <ul class="list-group">
               <div class="text-center h3">Tavolo Selezionato {{selectedtableId}}</div>
               <li class="list-group-item" *ngFor=" let item of order ; let i = index   ">
-                <div class="label label-success"{{ item?.prezzo  }}</div><div class="input-group">
+                <div class="input-group">
       <span class="input-group-btn">
         <button class="btn btn-default" type="button" id="btn-plus" (click)="quantity.value = toString(parseInt(quantity.value)-1) "><span class="fa fa-minus"></span></button>
       </span>
-          <input #quantity type="text" class="form-control" name="qty" id="qty" value="1">
-          <span class="input-group-btn">
+                  <input #quantity type="text" class="form-control" name="qty" id="qty" value="1">
+                  <span class="input-group-btn">
         <button class="btn btn-default" type="button" id="btn-minus" (click)="quantity.value = toString(parseInt(quantity.value)+1)"><span class="fa fa-plus"></span></button>
       </span>
-        </div><!-- /input-group -->
+                </div><!-- /input-group -->
+                <div class="label label-success">${{ item?.prezzo  }}</div>
                 {{item?.nome  }}
 
                 <button class="btn btn-danger btn-xs pull-right" (click)=" deleteItem(i)">
