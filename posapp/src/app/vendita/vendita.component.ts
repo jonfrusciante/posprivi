@@ -48,12 +48,19 @@ export interface OrderTicket {
       console.log(this.order);
       for (let i = 0; i < this.order.length; i++) {
         if (s.id === this.order[i].id) {
-          this.order[i].quantity = this.order[i].quantity + 1 ;
-        } else {
-          this.order.push(s);
-
+          flag = 1;
+          this.order[i].quantity = this.order[i].quantity + 1;
         }
-     }
+      }
+
+//Check if flag value changed.
+      if (flag === 1) {
+        console.log('found');
+      } else {
+        this.order.push(s);
+      }
+
+
     });
 
 
