@@ -8,7 +8,7 @@
   <div  *ngIf="!table.islibero" class="card-footer" >status <p>Occupato</p></div>
   <button class="btn btn-primary" *ngIf="!table.islibero" (click)="showorder(table.numero) ">Mostra ordine</button>
   <button class="btn btn-info" *ngIf="table.islibero" [routerLink]="['../vendita']" [queryParams]="{ table: table.numero }">Aggiungi Ordine</button>
-  <button *ngIf="stateB" class="btn btn-danger" (click)="completa(table.numero)">Paga</button>
+  <button *ngIf="stateB && !table.islibero" class="btn btn-danger" (click)="completa(table.numero)">Paga</button>
 
 
 </div>
