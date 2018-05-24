@@ -15,7 +15,7 @@
 <div  #ticket  class="row ">
   <div *ngFor="let order of $orders | async">
   <div  class="card " >
-    <button *ngIf="stateB " class="btn btn-danger" (click)="completa(order)">Paga</button>
+    <button class="btn btn-danger" (click)="completa(order)">Paga</button>
 
 
       <table class="table table-striped">
