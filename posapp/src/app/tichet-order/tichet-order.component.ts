@@ -16,7 +16,7 @@ export class TichetOrderComponent implements OnInit ,OnDestroy{
   @ViewChild('ticket') div: ElementRef;
   $orders: Observable<any[]>;
   $tables: Observable<any[]>;
-  constructor(private afs: AngularFirestore , private prinSer: PrinterService, private db:FirestoreService) {
+  constructor(private afs: AngularFirestore , private prinSer: PrinterService, private db: FirestoreService) {
     this.$tables = this.afs.collection('Tavoli').valueChanges();
   }
 
