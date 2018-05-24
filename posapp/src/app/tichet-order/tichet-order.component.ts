@@ -35,7 +35,7 @@ export class TichetOrderComponent implements OnInit ,OnDestroy{
        return {id, ...data};
      }))
    );
-   this.stateB = !this.stateB;
+   this.stateB =! this.stateB;
   }
   stampa() {
     const data = `<!DOCTYPE HTML>
@@ -57,9 +57,9 @@ ${this.div.nativeElement.innerHTML}
 
   completa(order) {
    // this.afs.collection('Tavoli').doc(order.nTavolo).update({islibero: true});
-    const table = order;
-    console.log(`Tavoli/${order}/ordini`);
-    this.db.deleteCollection(`Tavoli/${order}/ordini`,20).subscribe(n => this.afs.collection('Tavoli').doc(order).update({islibero: true}));
+    const table = order.nTavolo;
+    console.log(`Tavoli/${order.nTavolo}/ordini`);
+    this.db.deleteCollection(`Tavoli/${order.nTavolo}/ordini`,20).subscribe(n => this.afs.collection('Tavoli').doc(order.nTavolo).update({islibero: true}));
    // this.afs.collection('Tavoli').doc(order.nTavolo).collection('ordini').doc(order.id).delete()
 }
 }
