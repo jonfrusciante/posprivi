@@ -44,7 +44,7 @@
       </div>
 
     </div>
-    <button [ngStyle]="{visibility : stateB }" class="btn btn-danger" (click)="completa(order)">Paga</button>
+    <button *ngIf="stateB" class="btn btn-danger" (click)="completa(order)">Paga</button>
   </div>
 
   </div>
