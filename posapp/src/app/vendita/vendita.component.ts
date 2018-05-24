@@ -87,7 +87,7 @@ export interface OrderTicket {
     let i = 0 ,
       sum = 0;
     for (; i < this.order.length; i++) {
-      sum += parseInt(this.order[i].prezzo , 10);
+      sum += parseInt(this.order[i].prezzo  , 10) * parseInt(this.order[i].quantity , 10);
     }
     return sum;
 
