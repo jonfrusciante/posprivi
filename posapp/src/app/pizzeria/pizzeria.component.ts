@@ -3,6 +3,7 @@ import {PrinterService} from '../printer.service';
 import {Observable} from 'rxjs/Rx';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {map} from 'rxjs/internal/operators';
+import {FirestoreService} from "../firestore.service";
 export interface Ordine {
   categoria: string;
   nome: string;
@@ -34,16 +35,10 @@ export class PizzeriaComponent implements OnInit {
   installedPrinter: Observable<any[]>;
   order: TicketOrder[];
 
-  constructor(private  prinSer: PrinterService, private afs: AngularFirestore) {
+  constructor(private  prinSer: PrinterService, private afs: AngularFirestore, private db: FirestoreService) {
     this.printerAvia = prinSer.printerAviable;
     this.installedPrinter = prinSer.getPrinters();
-    this.orders$ = this.afs.collection('Tavoli').doc('3' ).collection('ordini').snapshotChanges().pipe(
-      map(actions => actions.map( a => {
-        const data = a.payload.doc.data() as TicketOrder ;
-        const id = a.payload.doc.id;
-        return {id, ...data};
-      }))
-    );
+    this.orders$ = this.db.colWithIds$('Tavoli');
     this.orders$.subscribe(n => this.order = n);
   }
 
