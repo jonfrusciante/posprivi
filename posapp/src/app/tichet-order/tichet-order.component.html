@@ -37,7 +37,7 @@
 
         </tbody>
       </table>
-      <div class="card-footer"> modificato at:{{order.data_modifica.seconds * 1000 | date:'full'}}
+      <div class="card-footer"> Aggiunto at:{{order.data_modifica.seconds * 1000 | date:'full'}}
         <div class="align-center">
           <button class="btn btn-danger" (click)="completa(order)">Paga</button>
           <button class="btn btn-info" (click)="stampa()">Stampa</button>
