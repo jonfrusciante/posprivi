@@ -6,7 +6,7 @@
   <div class="card-body" >coperti max :{{table.coperti}}</div>
   <div  *ngIf="table.islibero" class="card-footer" >status <p>Libero</p></div>
   <div  *ngIf="!table.islibero" class="card-footer" >status <p>Occupato</p></div>
-  <button class="btn btn-primary" *ngIf="!table.islibero" (click)="showorder(table.numero)">Mostra ordine</button>
+  <button class="btn btn-primary" *ngIf="!table.islibero" (click)="showorder(table.numero) , stateB=!stateB">Mostra ordine</button>
   <button class="btn btn-info" *ngIf="table.islibero" [routerLink]="['../vendita']" [queryParams]="{ table: table.numero }">Aggiungi Ordine</button>
 
 
@@ -44,7 +44,7 @@
       </div>
 
     </div>
-    <button *ngIf="order.ordine.length " class="btn btn-danger" (click)="completa(order)">Paga</button>
+    <button [ngStyle]="{hidden: stateB }" class="btn btn-danger" (click)="completa(order)">Paga</button>
   </div>
 
   </div>

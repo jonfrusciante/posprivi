@@ -13,6 +13,7 @@ import {FirestoreService} from "../firestore.service";
   styleUrls: ['./tichet-order.component.css']
 })
 export class TichetOrderComponent implements OnInit ,OnDestroy{
+  stateB=false;
   @ViewChild('ticket') div: ElementRef;
   $orders: Observable<any[]>;
   $tables: Observable<any[]>;
