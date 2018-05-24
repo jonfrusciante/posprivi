@@ -35,7 +35,7 @@ export class TichetOrderComponent implements OnInit ,OnDestroy{
        return {id, ...data};
      }))
    );
-   this.stateB =! this.stateB;
+   this.stateB = !this.stateB;
   }
   stampa() {
     const data = `<!DOCTYPE HTML>
