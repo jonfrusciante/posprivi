@@ -56,7 +56,7 @@ ${this.div.nativeElement.innerHTML}
 
   completa(order) {
     this.afs.collection('Tavoli').doc(order.nTavolo).update({islibero: true});
-    this.db.deleteCollection('Tavoli/${order.nTavolo}/ordini',20);
+    this.db.deleteCollection('Tavoli/{order.nTavolo}/ordini',20).subscribe();
    // this.afs.collection('Tavoli').doc(order.nTavolo).collection('ordini').doc(order.id).delete()
 }
 }
