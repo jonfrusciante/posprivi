@@ -56,8 +56,9 @@ ${this.div.nativeElement.innerHTML}
 
   completa(order) {
    // this.afs.collection('Tavoli').doc(order.nTavolo).update({islibero: true});
-    console.log('Tavoli/`${order.nTavolo}`/ordini');
-    this.db.deleteCollection('Tavoli/${order.nTavolo}/ordini',20).subscribe(n => this.afs.collection('Tavoli').doc(order.nTavolo).update({islibero: true}));
+    const table = order.nTavolo;
+    console.log(`Tavoli/${order.nTavolo}/ordini`);
+    this.db.deleteCollection(`Tavoli/${order.nTavolo}/ordini`,20).subscribe(n => this.afs.collection('Tavoli').doc(order.nTavolo).update({islibero: true}));
    // this.afs.collection('Tavoli').doc(order.nTavolo).collection('ordini').doc(order.id).delete()
 }
 }
