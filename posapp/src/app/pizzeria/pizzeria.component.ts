@@ -34,11 +34,11 @@ export class PizzeriaComponent implements OnInit {
   printerAvia: Observable<any[]>;
   installedPrinter: Observable<any[]>;
   order: TicketOrder[];
-
+   table = 1;
   constructor(private  prinSer: PrinterService, private afs: AngularFirestore, private db: FirestoreService) {
     this.printerAvia = prinSer.printerAviable;
     this.installedPrinter = prinSer.getPrinters();
-    this.orders$ = this.db.colWithIds$('Tavoli');
+    this.orders$ = this.db.colWithIds$(`Tavoli/${this.table}`);
     this.orders$.subscribe(n => this.order = n);
   }
 
