@@ -13,8 +13,9 @@
 </div>
 </div>
 <div  #ticket  class="row ">
+  <div *ngFor="let order of $orders | async">
   <div  class="card " >
-    <div *ngFor="let order of $orders | async">
+
 
       <table class="table table-striped">
         <thead>
