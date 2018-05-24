@@ -39,10 +39,11 @@
       </table>
       <div class="card-footer"> Aggiunto at:{{order.data_modifica.seconds * 1000 | date:'full'}}
         <div class="align-center">
-          <button class="btn btn-danger" (click)="completa(order)">Paga</button>
           <button class="btn btn-info" (click)="stampa()">Stampa</button>
         </div>
       </div>
+      <button class="btn btn-danger" (click)="completa(order)">Paga</button>
+
     </div>
 </div>
 
