@@ -4,6 +4,7 @@ import {AngularFirestore} from 'angularfire2/firestore';
 import {map} from 'rxjs/internal/operators';
 import {Prodotti} from '../forms/forms.component';
 import {PrinterService} from '../printer.service';
+import {FirestoreService} from "../firestore.service";
 
 
 @Component({
@@ -15,7 +16,7 @@ export class TichetOrderComponent implements OnInit ,OnDestroy{
   @ViewChild('ticket') div: ElementRef;
   $orders: Observable<any[]>;
   $tables: Observable<any[]>;
-  constructor(private afs: AngularFirestore , private prinSer: PrinterService) {
+  constructor(private afs: AngularFirestore , private prinSer: PrinterService, private db:FirestoreService) {
     this.$tables = this.afs.collection('Tavoli').valueChanges();
   }
 
@@ -55,6 +56,7 @@ ${this.div.nativeElement.innerHTML}
 
   completa(order) {
     this.afs.collection('Tavoli').doc(order.nTavolo).update({islibero: true});
+    this.db.delete('Tavoli/${order.nTavolo}/ordini');
    // this.afs.collection('Tavoli').doc(order.nTavolo).collection('ordini').doc(order.id).delete()
 }
 }
