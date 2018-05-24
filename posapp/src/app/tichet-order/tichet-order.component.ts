@@ -27,6 +27,15 @@ export class TichetOrderComponent implements OnInit ,OnDestroy{
   ngOnDestroy() {
     // this.prinSer.removePrinter();
 }
+  getSum(order) {
+    let i = 0 ,
+      sum = 0;
+    for (; i < order.length; i++) {
+      sum += parseInt(order[i].prezzo  , 10) * parseInt(order[i].quantity , 10);
+    }
+    return sum;
+
+  }
   showorder(numero: String | any) {
    this.$orders = this.afs.collection('Tavoli').doc(numero).collection('ordini').snapshotChanges().pipe(
      map(actions => actions.map( a => {
