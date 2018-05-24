@@ -44,7 +44,7 @@
       </div>
 
     </div>
-    <button *ngIf="order" class="btn btn-danger" (click)="completa(order)">Paga</button>
+    <button *ngIf="order.ordine.length " class="btn btn-danger" (click)="completa(order)">Paga</button>
   </div>
 
   </div>
