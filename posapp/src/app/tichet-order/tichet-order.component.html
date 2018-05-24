@@ -15,7 +15,7 @@
 <div  #ticket  class="row ">
   <div  class="card " >
     <div *ngFor="let order of $orders | async">
-    <div  *ngFor="let ord of order.ordine">
+
       <table class="table table-striped">
         <thead>
         <tr>
@@ -25,8 +25,10 @@
           <th scope="col">Prezzo</th>
         </tr>
         </thead>
+
         <tbody>
-        <tr>
+
+        <tr *ngFor="let ord of order.ordine">
           <th scope="row">{{ord.quantity}}</th>
           <td>{{ord.nome}}</td>
           <th scope="row">{{ord.quantity}}</th>
@@ -45,4 +47,4 @@
 </div>
 
   </div>
-</div>
+
