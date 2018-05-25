@@ -21,10 +21,13 @@ export class TicketServiceService {
           const pizzeriaOrder = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           const CucinaOrder = ord.ordine.filter(articoli => articoli.printer === 'CucinaPrinter');
          // ord.ordine = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
-          if (pizzeriaOrder.length > 0){
+          if (pizzeriaOrder.length > 0) {
+            console.log('pizzeria if');
             ord.ordine = pizzeriaOrder;
             this.db.set('OrdiniPizzeria' , ord );
           } else if (CucinaOrder.length > 0){
+            console.log('cocina if');
+
             ord.ordine = CucinaOrder;
             this.db.set('OrdiniCucina' , ord );
 
