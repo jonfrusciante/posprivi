@@ -30,7 +30,7 @@ export class PizzeriaComponent implements OnInit {
   @ViewChild('ticket') div: ElementRef;
   ordersi$: Observable<TicketOrder[]>;
   orderFROM$: Observable<Ordine[]>;
-
+  $OrderPizza:Observable<TicketOrder[]>
   stampanteSel: string;
   rep: string;
   host: string;
@@ -39,6 +39,7 @@ export class PizzeriaComponent implements OnInit {
   order: TicketOrder[];
    table = 1;
   constructor(private  prinSer: PrinterService, private afs: AngularFirestore, private db: FirestoreService ) {
+    this.$OrderPizza = this.db.col$('OrdiniPizzeria');
     this.printerAvia = prinSer.printerAviable;
     this.installedPrinter = prinSer.getPrinters();
     this.ordersi$ = this.db.col$(`Tavoli/${this.table}/ordini`);
