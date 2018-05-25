@@ -73,5 +73,28 @@
 <div class="row">
   <div *ngFor= "let PizzaOrder of $OrderPizza | async ">
     <h1>Tavolo n {{PizzaOrder.nTavolo}}</h1>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Qty</th>
+        <th scope="col">Articolo</th>
+        <th scope="col">Quantita</th>
+        <th scope="col">Prezzo</th>
+      </tr>
+      </thead>
+
+      <tbody>
+
+      <tr *ngFor="let ord of PizzaOrder.ordine">
+        <th scope="row">{{ord.quantity}}</th>
+        <td>{{ord.nome}}</td>
+        <th scope="row">{{ord.quantity}}</th>
+        <td>{{ord.prezzo}}</td>
+      </tr>
+
+      </tbody>
+    </table>
+
+    </table>
 </div>
 </div>
