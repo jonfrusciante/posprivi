@@ -20,6 +20,7 @@ export class TicketServiceService {
         ord => {
           const pizzeriaOrder = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           const CucinaOrder = ord.ordine.filter(articoli => articoli.printer === 'CucinaPrinter');
+          console.log('pizza' , pizzeriaOrder  , 'cucina' , CucinaOrder)
          // ord.ordine = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           if (pizzeriaOrder.length > 0) {
             console.log('pizzeria if');
