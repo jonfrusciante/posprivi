@@ -61,7 +61,7 @@ export class PizzeriaComponent implements OnInit {
         ord => {
           const ordi = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
            const data = ord.data_modifica;
-           return {data, ...ordi};
+           return [data, ...ordi];
         }
       ) )
     );
