@@ -39,7 +39,8 @@ export class PizzeriaComponent implements OnInit {
     this.printerAvia = prinSer.printerAviable;
     this.installedPrinter = prinSer.getPrinters();
     this.orders$ = this.db.docWithRefs$(`Tavoli/${this.table}`);
-    this.orders$.subscribe(n => this.order = n);
+    this.orders$.subscribe(c => console.log(c));
+    // this.orders$.subscribe(n => this.order = n);
   }
 
   addStampante() {
