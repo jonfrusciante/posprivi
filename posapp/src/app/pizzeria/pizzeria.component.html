@@ -78,7 +78,7 @@
       <div class="card-header"> quantity: {{ord.quantity}} | articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}}</div>
       </div>
 
-      <div class="card-footer"> modificato at:{{orde.data * 1000 | date:'full'}}</div>
+      <div class="card-footer"> modificato at:{{orde.data_modifica.seconds  * 1000 | date:'full'}}</div>
       <button class="btn btn-primary" (click)="printP(ord)">Stampa qualcosa printer pizzeria</button>
 
     </div>
