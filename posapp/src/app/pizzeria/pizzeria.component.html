@@ -56,21 +56,6 @@
   </div>
 </div>
 
-<div class="row">
-  <div class="ticket"  *ngFor="let orde of ordersi$ | async">
-    <div class="card">
-      <h3>{{orde?.nTavolo}}</h3>
-      <div *ngFor="let ord of orde?.ordine">
-        <div class="card-header">articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}}</div>
-      </div>
-
-      <div class="card-footer"> modificato at:{{orde.data_modifica.seconds * 1000 | date:'full'}}</div>
-      <button class="btn btn-primary" (click)="printP(orde)">Stampa qualcosa printer pizzeria</button>
-
-    </div>
-  </div>
-</div>
-
  <div class="row">
   <div class="ticket"  *ngFor="let orde of orderFROM$ | async">
     <div class="card">
