@@ -24,12 +24,12 @@ export class TicketServiceService {
           if (pizzeriaOrder.length > 0) {
             console.log('pizzeria if');
             ord.ordine = pizzeriaOrder;
-            this.db.set('OrdiniPizzeria' , ord );
+            this.db.add('OrdiniPizzeria' , ord );
           } else if (CucinaOrder.length > 0){
             console.log('cocina if');
 
             ord.ordine = CucinaOrder;
-            this.db.set('OrdiniCucina' , ord );
+            this.db.add('OrdiniCucina' , ord );
 
           }
           // const ordi = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
