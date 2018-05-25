@@ -73,6 +73,7 @@
 <div class="row">
   <div *ngFor= "let PizzaOrder of $OrderPizza | async ">
     <h1>Tavolo n {{PizzaOrder.nTavolo}}</h1>
+    <button class="btn btn-danger" (click)="delOrder(PizzaOrder.id)"></button>
     <table class="table table-striped">
       <thead>
       <tr>

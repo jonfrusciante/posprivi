@@ -39,8 +39,8 @@ export class PizzeriaComponent implements OnInit {
   order: TicketOrder[];
    table = 1;
   constructor(private  prinSer: PrinterService, private afs: AngularFirestore, private db: FirestoreService ) {
-    this.$OrderPizza = this.db.col$('OrdiniPizzeria');
-    this.$OrderPizza.subscribe(c=>console.log(c));
+    this.$OrderPizza = this.db.colWithIds$('OrdiniPizzeria');
+    this.$OrderPizza.subscribe(c => console.log(c));
     this.printerAvia = prinSer.printerAviable;
     this.installedPrinter = prinSer.getPrinters();
     this.ordersi$ = this.db.col$(`Tavoli/${this.table}/ordini`);
@@ -48,6 +48,9 @@ export class PizzeriaComponent implements OnInit {
     this.orderFROM$ = this.filterOrderPizzeria();
     this.orderFROM$.subscribe(kk => console.log(kk));
     // this.orders$.subscribe(n => this.order = n);
+  }
+  delOrder(id) {
+    this.db.delete(`OrdiniPizzeria/${id}`);
   }
 
   addStampante() {
