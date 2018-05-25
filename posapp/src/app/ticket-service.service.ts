@@ -25,7 +25,7 @@ export class TicketServiceService {
             console.log('pizzeria if');
             ord.ordine = pizzeriaOrder;
             this.db.add('OrdiniPizzeria' , ord );
-          } else if (CucinaOrder.length > 0){
+          } else if (CucinaOrder.length > 0) {
             console.log('cocina if');
 
             ord.ordine = CucinaOrder;
