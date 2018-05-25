@@ -60,7 +60,7 @@
   <div class="ticket"  *ngFor="let orde of orderFROM$ | async">
     <div class="card">
       <div *ngFor="let ord of orde.ordine">
-      <div class="card-header"> quantity: {{ord.quantity}} | articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}}</div>
+      <div class="card-header"> quantity : {{ord.quantity}} | articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}}</div>
       </div>
 
       <div class="card-footer"> modificato at:{{orde.data_modifica.seconds  * 1000 | date:'full'}}</div>
