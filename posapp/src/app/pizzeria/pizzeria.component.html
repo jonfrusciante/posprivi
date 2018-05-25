@@ -65,6 +65,7 @@
 <div class="row">
   <div class="ticket">
     <div class="card" *ngFor="let order of $orders | async">
+      <h3>{{order.nTavolo}}</h3>
       <div *ngFor="let ord of order.ordine">
         <div class="card-header">articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}}</div>
       </div>
