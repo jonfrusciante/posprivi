@@ -114,7 +114,7 @@ export interface OrderTicket {
     this.afs.collection('Tavoli').doc(c.nTavolo).update({islibero: false});
     this.afs.collection('Tavoli').doc(c.nTavolo).collection('ordini').add(c);
     console.log(c);
-    this.ticket.dispatchTicket(c.nTavolo);
+    this.ticket.dispatchTicket(c.nTavolo).subscribe();
     this.selectedtableId = undefined;
     this.order = [];
     this.router.navigate(['./order']);
