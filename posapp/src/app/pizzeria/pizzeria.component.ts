@@ -28,6 +28,8 @@ export interface TicketOrder {
 export class PizzeriaComponent implements OnInit {
   @ViewChild('ticket') div: ElementRef;
   ordersi$: Observable<TicketOrder[]>;
+  orderFROM$: Observable<Ordine[]>;
+
   stampanteSel: string;
   rep: string;
   host: string;
@@ -40,7 +42,7 @@ export class PizzeriaComponent implements OnInit {
     this.installedPrinter = prinSer.getPrinters();
     this.ordersi$ = this.db.col$(`Tavoli/${this.table}/ordini`);
     this.ordersi$.subscribe(c => console.log(c));
-    this.modificarow().subscribe(n => console.log('modifica roe:', n));
+    this.orderFROM$ = this.modificarow();
     // this.orders$.subscribe(n => this.order = n);
   }
 
