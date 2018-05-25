@@ -63,7 +63,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="ticket"  *ngFor="let orde of $orders | async">
+  <div class="ticket"  *ngFor="let orde of ordersi$ | async">
     <div class="card">
       <h3>{{orde?.nTavolo}}</h3>
       <div *ngFor="let ord of orde?.ordine">
