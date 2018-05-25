@@ -4,6 +4,7 @@ import {Observable} from 'rxjs/Rx';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {map} from 'rxjs/internal/operators';
 import {FirestoreService} from "../firestore.service";
+import {TicketServiceService} from "../ticket-service.service";
 export interface Ordine {
   categoria: string;
   nome: string;
@@ -37,12 +38,12 @@ export class PizzeriaComponent implements OnInit {
   installedPrinter: Observable<any[]>;
   order: TicketOrder[];
    table = 1;
-  constructor(private  prinSer: PrinterService, private afs: AngularFirestore, private db: FirestoreService) {
+  constructor(private  prinSer: PrinterService, private afs: AngularFirestore, private db: FirestoreService ) {
     this.printerAvia = prinSer.printerAviable;
     this.installedPrinter = prinSer.getPrinters();
     this.ordersi$ = this.db.col$(`Tavoli/${this.table}/ordini`);
     this.ordersi$.subscribe(c => console.log(c));
-    this.orderFROM$ = this.modificarow();
+    this.orderFROM$ = this.filterOrderPizzeria();
     this.orderFROM$.subscribe(kk => console.log(kk));
     // this.orders$.subscribe(n => this.order = n);
   }
@@ -54,7 +55,7 @@ export class PizzeriaComponent implements OnInit {
   ngOnInit() {
   }
 
-  modificarow(): Observable<any[]> {
+  filterOrderPizzeria(): Observable<any[]> {
     this.ordersi$ = this.db.col$(`Tavoli/${this.table}/ordini`);
     return this.ordersi$.pipe(
       map( x => x.map(

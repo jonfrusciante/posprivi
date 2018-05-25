@@ -4,6 +4,7 @@ import {AngularFirestore} from 'angularfire2/firestore';
 import {Prodotti} from '../forms/forms.component';
 import {map} from 'rxjs/internal/operators';
 import {ActivatedRoute, Router} from '@angular/router';
+import {TicketServiceService} from "../ticket-service.service";
 export interface OrderTicket {
   id?: string;
   nTavolo: string;
@@ -27,7 +28,7 @@ export interface OrderTicket {
   private sub: any;
   quantity = 1;
   constructor(private  afs: AngularFirestore , private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router, private ticket: TicketServiceService) {
     this.Table$ = this.afs.collection('Tavoli').valueChanges();
     this.categories = this.afs.collection('Categorie_prodotti').valueChanges();
     this.Product = this.afs.collection('Prodotti').snapshotChanges().pipe(
@@ -113,7 +114,7 @@ export interface OrderTicket {
     this.afs.collection('Tavoli').doc(c.nTavolo).update({islibero: false});
     this.afs.collection('Tavoli').doc(c.nTavolo).collection('ordini').add(c);
     console.log(c);
-
+    this.ticket.dispatchTicket(c.nTavolo);
     this.selectedtableId = undefined;
     this.order = [];
     this.router.navigate(['./order']);
