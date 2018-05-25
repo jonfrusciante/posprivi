@@ -70,3 +70,16 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="ticket"  *ngFor="let orde of modificarow() | async">
+    <div class="card">
+        <div class="card-header"> quantity: {{orde.quantity}} | articolo: {{orde.nome}}  |  prezzo: {{orde.prezzo}}</div>
+      </div>
+
+      <div class="card-footer"> modificato at:{{orde.data_modifica.seconds * 1000 | date:'full'}}</div>
+      <button class="btn btn-primary" (click)="printP(orde)">Stampa qualcosa printer pizzeria</button>
+
+    </div>
+  </div>
+</div>

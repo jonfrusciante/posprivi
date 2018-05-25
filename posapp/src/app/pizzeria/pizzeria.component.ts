@@ -50,9 +50,14 @@ export class PizzeriaComponent implements OnInit {
   ngOnInit() {
   }
 
-  modificarow(prod) {
-
-  return ` `;
+  modificarow(): Observable<any[]> {
+    this.ordersi$ = this.db.col$(`Tavoli/${this.table}/ordini`);
+    return this.ordersi$.pipe(
+      map( x => x.map(
+        ord =>
+          ord.ordine.map( articoli => articoli.printer === 'pizzeriaPrinter' )
+      ) )
+    );
   }
 
   printP(order) {
