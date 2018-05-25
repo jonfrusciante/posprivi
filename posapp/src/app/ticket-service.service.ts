@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {FirestoreService} from "./firestore.service";
-import {PrinterService} from "./printer.service";
-import {Observable} from "rxjs/Rx";
-import {TicketOrder} from "./pizzeria/pizzeria.component";
-import {map} from "rxjs/internal/operators";
+import {FirestoreService} from './firestore.service';
+import {PrinterService} from './printer.service';
+import {Observable} from 'rxjs/Rx';
+import {TicketOrder} from './pizzeria/pizzeria.component';
+import {map} from 'rxjs/internal/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,18 +20,17 @@ export class TicketServiceService {
         ord => {
           const pizzeriaOrder = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           const CucinaOrder = ord.ordine.filter(articoli => articoli.printer === 'CucinaPrinter');
-          console.log('pizza' , pizzeriaOrder  , 'cucina' , CucinaOrder)
+          console.log('pizza' , pizzeriaOrder  , 'cucina' , CucinaOrder);
          // ord.ordine = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
-          if (pizzeriaOrder.length > 0) {
+          if (pizzeriaOrder.length > 0 ) {
             console.log('pizzeria if');
             ord.ordine = pizzeriaOrder;
             this.db.add('OrdiniPizzeria' , ord );
-          } else if (CucinaOrder.length > 0) {
+          }
+          if (CucinaOrder.length > 0) {
             console.log('cocina if');
-
             ord.ordine = CucinaOrder;
             this.db.add('OrdiniCucina' , ord );
-
           }
           // const ordi = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           // const data = ord.data_modifica;
