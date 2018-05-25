@@ -43,6 +43,7 @@ export class PizzeriaComponent implements OnInit {
     this.ordersi$ = this.db.col$(`Tavoli/${this.table}/ordini`);
     this.ordersi$.subscribe(c => console.log(c));
     this.orderFROM$ = this.modificarow();
+    this.orderFROM$.subscribe(kk => console.log(kk));
     // this.orders$.subscribe(n => this.order = n);
   }
 
@@ -57,8 +58,11 @@ export class PizzeriaComponent implements OnInit {
     this.ordersi$ = this.db.col$(`Tavoli/${this.table}/ordini`);
     return this.ordersi$.pipe(
       map( x => x.map(
-        ord =>
-          ord.ordine.filter( articoli => articoli.printer === 'PizzeriaPrinter' )
+        ord => {
+          const ordi = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
+           const data = ord.data_modifica;
+           return {data, ...ordi};
+        }
       ) )
     );
   }
