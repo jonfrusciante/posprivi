@@ -55,9 +55,9 @@ export class PizzeriaComponent implements OnInit {
   return ` `;
   }
 
-  printP() {
-    const prod = this.order.map(n => n.ordine.map( k =>  ` <tr><td>${ k.nome }</td>  <td>${k.prezzo}</td></tr> ` ) )  ;
-    const prezz = this.order.map(n => n.ordine.map( k => ` <td>${ k.prezzo }</td> ` ) ) ;
+  printP(order) {
+    const prod = order.map(n => n.ordine.map( k =>  ` <tr><td>${ k.nome }</td>  <td>${k.prezzo}</td></tr> ` ) )  ;
+    const prezz = order.map(n => n.ordine.map( k => ` <td>${ k.prezzo }</td> ` ) ) ;
      const data =
       `
 <!DOCTYPE HTML>

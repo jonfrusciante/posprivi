@@ -55,13 +55,7 @@
 
   </div>
 </div>
-<div class="row">
-  <div class="align-content-lg-center">
-    <button class="btn btn-primary" (click)="printP()">Stampa qualcosa printer pizzeria</button>
-    <button class="bt btn-info" (click)="printC()">Stampa qualcosa printer cucina</button>
 
-  </div>
-</div>
 <div class="row">
   <div class="ticket"  *ngFor="let orde of ordersi$ | async">
     <div class="card">
@@ -71,6 +65,8 @@
       </div>
 
       <div class="card-footer"> modificato at:{{orde.data_modifica.seconds * 1000 | date:'full'}}</div>
-  </div>
+      <button class="btn btn-primary" (click)="printP(orde)">Stampa qualcosa printer pizzeria</button>
+
+    </div>
   </div>
 </div>
