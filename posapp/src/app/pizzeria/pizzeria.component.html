@@ -74,11 +74,11 @@
  <div class="row">
   <div class="ticket"  *ngFor="let orde of orderFROM$ | async">
     <div class="card">
-      <div *ngFor="let ord of orde">
+      <div *ngFor="let ord of orde.ordine">
       <div class="card-header"> quantity: {{ord.quantity}} | articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}}</div>
       </div>
 
-      <div class="card-footer"> modificato at:{{ord.data * 1000 | date:'full'}}</div>
+      <div class="card-footer"> modificato at:{{orde.data * 1000 | date:'full'}}</div>
       <button class="btn btn-primary" (click)="printP(ord)">Stampa qualcosa printer pizzeria</button>
 
     </div>

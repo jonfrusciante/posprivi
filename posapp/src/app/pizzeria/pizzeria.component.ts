@@ -59,9 +59,10 @@ export class PizzeriaComponent implements OnInit {
     return this.ordersi$.pipe(
       map( x => x.map(
         ord => {
-          const ordi = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
-           const data = ord.data_modifica;
-           return [data, ...ordi];
+          ord.ordine = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
+          // const ordi = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
+          // const data = ord.data_modifica;
+           return ord ;
         }
       ) )
     );
