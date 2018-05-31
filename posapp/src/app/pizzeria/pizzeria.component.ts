@@ -44,7 +44,7 @@ export class PizzeriaComponent implements OnInit {
     this.printerAvia = prinSer.printerAviable;
     this.installedPrinter = prinSer.getPrinters();
     this.ordersi$ = this.db.col$(`Tavoli/${this.table}/ordini`);
-    this.ordersi$.subscribe(c => console.log(c));
+    // this.ordersi$.subscribe(c => console.log(c));
     this.orderFROM$ = this.filterOrderPizzeria();
     this.orderFROM$.subscribe(kk => console.log(kk));
     // this.orders$.subscribe(n => this.order = n);
