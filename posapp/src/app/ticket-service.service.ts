@@ -21,10 +21,12 @@ export class TicketServiceService {
           const pizzeriaOrder = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           const CucinaOrder = ord.ordine.filter(articoli => articoli.printer === 'CucinaPrinter');
           console.log('pizza' , pizzeriaOrder  , 'cucina' , CucinaOrder);
+          ord.ordine = [];
           ord.ordine = pizzeriaOrder;
           this.db.add('OrdiniPizzeria' , ord );
+          ord.ordine = [];
           ord.ordine = CucinaOrder;
-          this.db.add('OrdiniPizzeria' , ord );
+          this.db.add('OrdiniCucina' , ord );
          /*
           let statusP = false;
           let statusC = false;
