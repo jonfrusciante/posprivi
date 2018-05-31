@@ -21,24 +21,24 @@ export class TicketServiceService {
           const pizzeriaOrder = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           const CucinaOrder = ord.ordine.filter(articoli => articoli.printer === 'CucinaPrinter');
           console.log('pizza' , pizzeriaOrder  , 'cucina' , CucinaOrder);
-          let statusP=false;
-          let statusC=false;
+          let statusP = false;
+          let statusC = false;
          // ord.ordine = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           if (pizzeriaOrder.length > 0 && statusP === false ) {
-            console.log('pizzeria if');
+            console.log('pizzeria if' , 'and status p = ' , statusP);
             ord.ordine = pizzeriaOrder;
             this.db.add('OrdiniPizzeria' , ord );
             statusP = true;
           }
           if (CucinaOrder.length > 0 && statusC === false) {
-            console.log('cocina if');
+            console.log('cocina if' , 'and statusC = ' , statusC);
             ord.ordine = CucinaOrder;
             this.db.add('OrdiniCucina' , ord );
             statusC=true;
           }
           // const ordi = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           // const data = ord.data_modifica;
-          return ord ;
+        //  return ord ;
         }
       ) )
     );
