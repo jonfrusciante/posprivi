@@ -57,9 +57,9 @@
 </div>
 
  <div class="row">
-  <div class="ticket margin"  *ngFor="let orde of orderFROM$ | async" >
+  <div class="ticket "  *ngFor="let orde of orderFROM$ | async" >
     <div class="card" >
-      <div *ngFor="let ord of orde.ordine">
+      <div *ngFor="let ord of orde.ordine" class="margin">
       <div class="card-header"> quantity : {{ord.quantity}} | articolo: {{ord.nome}}  |  prezzo: {{ord.prezzo}}</div>
       </div>
 
