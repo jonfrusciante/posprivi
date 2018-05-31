@@ -27,14 +27,15 @@ export class TicketServiceService {
           if (pizzeriaOrder.length > 0 && statusP === false ) {
             console.log('pizzeria if' , 'and status p = ' , statusP);
             ord.ordine = pizzeriaOrder;
-            this.db.add('OrdiniPizzeria' , ord );
             statusP = true;
+            this.db.add('OrdiniPizzeria' , ord );
           }
           if (CucinaOrder.length > 0 && statusC === false) {
             console.log('cocina if' , 'and statusC = ' , statusC);
             ord.ordine = CucinaOrder;
-            this.db.add('OrdiniCucina' , ord );
             statusC=true;
+
+            this.db.add('OrdiniCucina' , ord );
           }
           // const ordi = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           // const data = ord.data_modifica;
