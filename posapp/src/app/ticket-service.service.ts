@@ -21,16 +21,20 @@ export class TicketServiceService {
           const pizzeriaOrder = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           const CucinaOrder = ord.ordine.filter(articoli => articoli.printer === 'CucinaPrinter');
           console.log('pizza' , pizzeriaOrder  , 'cucina' , CucinaOrder);
+          let statusP=false;
+          let statusC=false;
          // ord.ordine = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
-          if (pizzeriaOrder.length > 0 ) {
+          if (pizzeriaOrder.length > 0 && statusP === false ) {
             console.log('pizzeria if');
             ord.ordine = pizzeriaOrder;
             this.db.add('OrdiniPizzeria' , ord );
+            statusP = true;
           }
-          if (CucinaOrder.length > 0) {
+          if (CucinaOrder.length > 0 && statusC === false) {
             console.log('cocina if');
             ord.ordine = CucinaOrder;
             this.db.add('OrdiniCucina' , ord );
+            statusC=true;
           }
           // const ordi = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           // const data = ord.data_modifica;
