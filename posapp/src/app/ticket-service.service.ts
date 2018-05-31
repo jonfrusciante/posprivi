@@ -23,10 +23,10 @@ export class TicketServiceService {
           console.log('pizza' , pizzeriaOrder  , 'cucina' , CucinaOrder);
           ord.ordine = [];
           ord.ordine = pizzeriaOrder;
-          this.db.add('OrdiniPizzeria' , ord );
+          ord.ordine.length > 0 ? this.db.add('OrdiniPizzeria' , ord ) : ord.ordine = [];
           ord.ordine = [];
           ord.ordine = CucinaOrder;
-          this.db.add('OrdiniCucina' , ord );
+          ord.ordine.length > 0 ? this.db.add('OrdiniCucina' , ord ) : ord.ordine = [];
          /*
           let statusP = false;
           let statusC = false;
