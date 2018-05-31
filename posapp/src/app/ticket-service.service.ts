@@ -21,6 +21,11 @@ export class TicketServiceService {
           const pizzeriaOrder = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           const CucinaOrder = ord.ordine.filter(articoli => articoli.printer === 'CucinaPrinter');
           console.log('pizza' , pizzeriaOrder  , 'cucina' , CucinaOrder);
+          ord.ordine = pizzeriaOrder;
+          this.db.add('OrdiniPizzeria' , ord );
+          ord.ordine = CucinaOrder;
+          this.db.add('OrdiniPizzeria' , ord );
+         /*
           let statusP = false;
           let statusC = false;
          // ord.ordine = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
@@ -36,7 +41,7 @@ export class TicketServiceService {
             statusC=true;
 
             this.db.add('OrdiniCucina' , ord );
-          }
+          }*/
           // const ordi = ord.ordine.filter(articoli => articoli.printer === 'PizzeriaPrinter');
           // const data = ord.data_modifica;
         //  return ord ;
